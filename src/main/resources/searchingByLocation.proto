@@ -1,0 +1,17 @@
+syntax = "proto3";// specifies the kind of syntax, I am using the version 3 of protocol buffers.
+
+option java_package = "grpc.newServices";// specifies the java package it can be modified.
+option java_multiple_files = true;// specifies the way the files are organised by the library, it is fixed.
+option java_outer_classname = "searchingByLocationImpl";// specifies the Class Name, I enter the service name + IMPL, which means implementation. It can be modified.
+
+//Creating a GRPC service which is called searchingByLocation
+
+service searchingByLocation{
+
+	//indicating the method with the term rpc, the method and type of message that is sending and receiving
+
+	rpc displayLocation()
+    rpc checkingMonitoringStations()
+    rpc airQualityResponse()
+
+    }
