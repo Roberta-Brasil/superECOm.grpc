@@ -10,9 +10,9 @@ service userCollaboration{
 
 	//indicating the method with the term rpc, the method and type of message that is sending and receiving
 
-	rpc   enterLocation()
-    rpc   addingDetails()
-    rpc   displayRecorded()
+	rpc   enterLocation() //Server Streaming
+    rpc   addingDetails() //Client Streaming
+    rpc   displayRecorded() //Server Streaming
 
 }
 
