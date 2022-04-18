@@ -12,7 +12,7 @@ service searchingByLocation{
 
 	rpc displayLocation(//Client Streaming
     rpc checkingMonitoringStations()//Bidirectional Streaming
-    rpc airQualityResponse()//Server Streaming
+    rpc airQualityResponse()//Server Streaming///jijijijijij
 
     }
 
