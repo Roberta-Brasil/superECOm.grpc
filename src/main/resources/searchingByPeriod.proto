@@ -10,15 +10,15 @@ service searchingByPeriod{
 
 	//indicating the method with the term rpc, the method and type of message that is sending and receiving
 
-	rpc requestPeriod()//Client Streaming
-    rpc enterNaturalResourcetype(EnterType)//Unary
-    rpc returnAirQualitybyPeriod()//Server Streaming
+	rpc requestPeriod(stream periodRequested) returns(identifyPeriod){}//Client Streaming
+    rpc enterNaturalResourcetype(radioButtonMarked) returns(registrationTypeResponse){}//Unary
+    rpc returnAirQualitybyPeriod(identifyPeriod) returns(stream reportAirWaterQuality){}//Server Streaming
 
 }
 
- //specify what my message is called, which type its contains and assigning its values.
+  //Client streaming - specify what my message is called, which type its contains and assigning its values.
 
- message containsString{
+ message periodRequested{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
@@ -27,3 +27,53 @@ service searchingByPeriod{
  	bool myBool = 3;
 
  }
+
+ //Client streaming - specify what my message return is called, which type its contains and assigning its values.
+
+ message identifyPeriod{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+ 	string firstString = 1;
+ 	int32 myInt = 2;
+ 	bool myBool = 3;
+
+ }
+
+  // Unary - specify what my message is called, which type its contains and assigning its values.
+
+ message radioButtonMarked{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+ 	string firstString = 1;
+ 	int32 myInt = 2;
+ 	bool myBool = 3;
+
+ }
+
+  // Unary - specify what my message return is called, which type its contains and assigning its values.
+
+ message registrationTypeResponse{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+ 	string firstString = 1;
+ 	int32 myInt = 2;
+ 	bool myBool = 3;
+
+ }
+
+  //Server streaming - specify what my message is called, which type its contains and assigning its values.
+
+ message reportAirWaterQuality{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+ 	string firstString = 1;
+ 	int32 myInt = 2;
+ 	bool myBool = 3;
+
+ }
+
+
