@@ -10,21 +10,19 @@ service userCollaboration{
 
 	//indicating the method with the term rpc, the method and type of message that is sending and receiving
 
-	rpc   enterLocation(chooseCity) returns (stream displayLocationDetails){} //Server Streaming
-    rpc   addingDetails(stream addInfo) returns (responseAddInfo){} //Client Streaming
+	rpc   enterLocation(enterCity) returns (stream displayLocationDetails){} //Server Streaming
+    rpc   addingDetails(stream addInfo) returns (stream responseAddInfo){} //Bidirectional Streaming
     rpc   displayRecorded(selectViewInfo) returns (stream responseDataRecorded){} //Server Streaming
 
 }
 
  ////Server Streaming - specify what my message is called, which type its contains and assigning its values.
 
- message chooseCity{
+ message enterCity{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
- 	string firstString = 1;
- 	int32 myInt = 2;
- 	bool myBool = 3;
+ 	string cityAdded = 3;
 
  }
 
@@ -34,33 +32,33 @@ service userCollaboration{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
- 	string firstString = 1;
- 	int32 myInt = 2;
- 	bool myBool = 3;
+    string cityAdded = 3;
+ 	string confirmingCityDetails = 2;
+ 	bool locationConfirmation = 1;
 
  }
 
-  ////Client Streaming - specify what my message is called, which type its contains and assigning its values.
+  //Bidirectional Streaming - specify what my message is called, which type its contains and assigning its values.
 
  message addInfo{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
- 	string firstString = 1;
- 	int32 myInt = 2;
- 	bool myBool = 3;
+ 	string naturalResourceInfo = 4;
+
 
  }
 
-  //Client Streaming - specify what my message return is called, which type its contains and assigning its values.
+  //Bidirectional Streaming - specify what my message return is called, which type its contains and assigning its values.
 
  message responseAddInfo{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
- 	string firstString = 1;
- 	int32 myInt = 2;
- 	bool myBool = 3;
+ 	string naturalResourceInfo = 4;
+ 	bool resourcesConfirmation = 1;
+ 	string naturalResourceLastAdded = 5;
+
 
  }
 
@@ -71,9 +69,7 @@ service userCollaboration{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
- 	string firstString = 1;
- 	int32 myInt = 2;
- 	bool myBool = 3;
+ 	string viewInfoRegistered = 1;
 
  }
   //Server streaming - specify what my message return is called, which type its contains and assigning its values.
@@ -82,8 +78,8 @@ service userCollaboration{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
- 	string firstString = 1;
- 	int32 myInt = 2;
- 	bool myBool = 3;
+        string displayDataRecorded = 1;
+ 	 	string confirmingCityDetails = 2;
+ 	 	string naturalResourceLastAdded = 5;
 
  }
