@@ -1,18 +1,22 @@
 package ds.SearchingByLocation;
 
+import java.io.IOException;
+
+import ds.SearchingByLocation.searchingByLocationGrpc.searchingByLocationImplBase;
 //Importing from grpc libraries
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
+
 
 //Skeleton for our server
 
 public class SearchingByLocationServer{
 	
 //this is an instance variable that containing the server	
-	private Server searchingByLocationImpl;
+	private Server searchinglocation;
 	
 //Main method	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 	
 		// TODO Auto-generated method stub
 		
@@ -22,16 +26,16 @@ public class SearchingByLocationServer{
 		serverService1. start();
 	}
 
-private void start() {
+private void start() throws IOException  {
 	System.out.println("Starting gRPC Server");
 	int port = 50051;
 	
 	//The builder Pattern
-	searchingByLocationImpl = ServerBuilder.forPort(port).addService(new searchingByLocationImpl()).build().start();
+	searchinglocation = ServerBuilder.forPort(port).addService(new SearchingByLocationImpl()).build().start();
 }
 
-//Extend abstract basec class for our own implementation
-  static class SearchingByLocationServer extends searchingByLocationImpl{
+//Extend abstract base class for our own implementation
+  static class SearchingByLocationImpl extends searchingByLocationImplBase{
 
 }
   }
