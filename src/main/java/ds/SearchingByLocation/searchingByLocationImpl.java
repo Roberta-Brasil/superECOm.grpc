@@ -48,23 +48,23 @@ public final class searchingByLocationImpl {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031searchingByLocation.proto\"\"\n\renterLoca" +
-      "tion\022\021\n\tcityInput\030\001 \001(\t\"U\n\017displayCityIn" +
-      "fo\022\024\n\014dataCityInfo\030\003 \001(\t\022\026\n\016emptyCityInp" +
-      "ut\030\001 \001(\010\022\024\n\014errorMessage\030\002 \001(\t\"\'\n\017scanCi" +
-      "tyEntered\022\024\n\014dataCityInfo\030\003 \001(\t\"]\n\026verif" +
-      "yStationRequested\022\024\n\014dataCityInfo\030\003 \001(\t\022" +
-      "\027\n\017checkingStation\030\001 \001(\010\022\024\n\014stationFound" +
-      "\030\004 \001(\t\"W\n\017waterAirQuality\022\024\n\014dataCityInf" +
-      "o\030\002 \001(\t\022\024\n\014stationFound\030\004 \001(\t\022\030\n\020reportA" +
-      "irQuality\030\005 \001(\t2\342\001\n\023searchingByLocation\022" +
-      "7\n\017displayLocation\022\016.enterLocation\032\020.dis" +
-      "playCityInfo\"\000(\001\022M\n\032checkingMonitoringSt" +
-      "ations\022\020.scanCityEntered\032\027.verifyStation" +
-      "Requested\"\000(\0010\001\022C\n\022airQualityResponse\022\027." +
-      "verifyStationRequested\032\020.waterAirQuality" +
-      "\"\0000\001B3\n\026ds.SearchingByLocationB\027searchin" +
-      "gByLocationImplP\001b\006proto3"
+      "\n\031searchingByLocation.proto\"%\n\renterLoca" +
+      "tion\022\024\n\014dataCityInfo\030\003 \001(\t\"U\n\017displayCit" +
+      "yInfo\022\024\n\014dataCityInfo\030\003 \001(\t\022\026\n\016emptyCity" +
+      "Input\030\001 \001(\010\022\024\n\014errorMessage\030\002 \001(\t\"\'\n\017sca" +
+      "nCityEntered\022\024\n\014dataCityInfo\030\003 \001(\t\"]\n\026ve" +
+      "rifyStationRequested\022\024\n\014dataCityInfo\030\003 \001" +
+      "(\t\022\027\n\017checkingStation\030\001 \001(\010\022\024\n\014stationFo" +
+      "und\030\004 \001(\t\"W\n\017waterAirQuality\022\024\n\014dataCity" +
+      "Info\030\003 \001(\t\022\024\n\014stationFound\030\004 \001(\t\022\030\n\020repo" +
+      "rtAirQuality\030\005 \001(\t2\342\001\n\023searchingByLocati" +
+      "on\0227\n\017displayLocation\022\016.enterLocation\032\020." +
+      "displayCityInfo\"\000(\001\022M\n\032checkingMonitorin" +
+      "gStations\022\020.scanCityEntered\032\027.verifyStat" +
+      "ionRequested\"\000(\0010\001\022C\n\022airQualityResponse" +
+      "\022\027.verifyStationRequested\032\020.waterAirQual" +
+      "ity\"\0000\001B3\n\026ds.SearchingByLocationB\027searc" +
+      "hingByLocationImplP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -83,7 +83,7 @@ public final class searchingByLocationImpl {
     internal_static_enterLocation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_enterLocation_descriptor,
-        new java.lang.String[] { "CityInput", });
+        new java.lang.String[] { "DataCityInfo", });
     internal_static_displayCityInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_displayCityInfo_fieldAccessorTable = new

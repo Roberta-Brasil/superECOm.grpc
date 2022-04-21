@@ -8,12 +8,12 @@ public interface enterLocationOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string cityInput = 1;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
-  java.lang.String getCityInput();
+  java.lang.String getDataCityInfo();
   /**
-   * <code>string cityInput = 1;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
   com.google.protobuf.ByteString
-      getCityInputBytes();
+      getDataCityInfoBytes();
 }

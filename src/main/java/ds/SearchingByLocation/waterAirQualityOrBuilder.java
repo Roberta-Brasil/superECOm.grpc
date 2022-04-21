@@ -8,11 +8,11 @@ public interface waterAirQualityOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string dataCityInfo = 2;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
   java.lang.String getDataCityInfo();
   /**
-   * <code>string dataCityInfo = 2;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
   com.google.protobuf.ByteString
       getDataCityInfoBytes();

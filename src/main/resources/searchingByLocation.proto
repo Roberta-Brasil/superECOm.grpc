@@ -22,7 +22,7 @@ service searchingByLocation{
 
  //it is the type that are in our message and has to convert the message into a series of bites, it has a name and a type
 
- 	string cityInput = 1;
+ 	string dataCityInfo = 3;
 
  }
 
@@ -67,7 +67,7 @@ service searchingByLocation{
 
  //it is the type that are in our message and has to convert the message into a series of bites
 
-    string dataCityInfo = 2;
+    string dataCityInfo = 3;
     string stationFound = 4;
     string reportAirQuality = 5;
 

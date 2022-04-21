@@ -198,7 +198,8 @@ public final class searchingByLocationGrpc {
     }
   }
 
-  /*import from server class  */
+  /**
+   */
   public static final class searchingByLocationStub extends io.grpc.stub.AbstractStub<searchingByLocationStub> {
     private searchingByLocationStub(io.grpc.Channel channel) {
       super(channel);

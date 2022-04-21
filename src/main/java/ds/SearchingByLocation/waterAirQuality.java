@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             dataCityInfo_ = s;
@@ -95,10 +95,10 @@ private static final long serialVersionUID = 0L;
             ds.SearchingByLocation.waterAirQuality.class, ds.SearchingByLocation.waterAirQuality.Builder.class);
   }
 
-  public static final int DATACITYINFO_FIELD_NUMBER = 2;
+  public static final int DATACITYINFO_FIELD_NUMBER = 3;
   private volatile java.lang.Object dataCityInfo_;
   /**
-   * <code>string dataCityInfo = 2;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
   public java.lang.String getDataCityInfo() {
     java.lang.Object ref = dataCityInfo_;
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string dataCityInfo = 2;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
   public com.google.protobuf.ByteString
       getDataCityInfoBytes() {
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (!getDataCityInfoBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dataCityInfo_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dataCityInfo_);
     }
     if (!getStationFoundBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, stationFound_);
@@ -230,7 +230,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!getDataCityInfoBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dataCityInfo_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dataCityInfo_);
     }
     if (!getStationFoundBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, stationFound_);
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object dataCityInfo_ = "";
     /**
-     * <code>string dataCityInfo = 2;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
     public java.lang.String getDataCityInfo() {
       java.lang.Object ref = dataCityInfo_;
@@ -551,7 +551,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dataCityInfo = 2;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
     public com.google.protobuf.ByteString
         getDataCityInfoBytes() {
@@ -567,7 +567,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string dataCityInfo = 2;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
     public Builder setDataCityInfo(
         java.lang.String value) {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dataCityInfo = 2;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
     public Builder clearDataCityInfo() {
       
@@ -589,7 +589,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string dataCityInfo = 2;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
     public Builder setDataCityInfoBytes(
         com.google.protobuf.ByteString value) {

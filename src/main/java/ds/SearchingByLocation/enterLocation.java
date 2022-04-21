@@ -16,7 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private enterLocation() {
-    cityInput_ = "";
+    dataCityInfo_ = "";
   }
 
   @java.lang.Override
@@ -43,10 +43,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            cityInput_ = s;
+            dataCityInfo_ = s;
             break;
           }
           default: {
@@ -81,34 +81,34 @@ private static final long serialVersionUID = 0L;
             ds.SearchingByLocation.enterLocation.class, ds.SearchingByLocation.enterLocation.Builder.class);
   }
 
-  public static final int CITYINPUT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object cityInput_;
+  public static final int DATACITYINFO_FIELD_NUMBER = 3;
+  private volatile java.lang.Object dataCityInfo_;
   /**
-   * <code>string cityInput = 1;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
-  public java.lang.String getCityInput() {
-    java.lang.Object ref = cityInput_;
+  public java.lang.String getDataCityInfo() {
+    java.lang.Object ref = dataCityInfo_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      cityInput_ = s;
+      dataCityInfo_ = s;
       return s;
     }
   }
   /**
-   * <code>string cityInput = 1;</code>
+   * <code>string dataCityInfo = 3;</code>
    */
   public com.google.protobuf.ByteString
-      getCityInputBytes() {
-    java.lang.Object ref = cityInput_;
+      getDataCityInfoBytes() {
+    java.lang.Object ref = dataCityInfo_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      cityInput_ = b;
+      dataCityInfo_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getCityInputBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cityInput_);
+    if (!getDataCityInfoBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, dataCityInfo_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getCityInputBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cityInput_);
+    if (!getDataCityInfoBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, dataCityInfo_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -160,8 +160,8 @@ private static final long serialVersionUID = 0L;
     ds.SearchingByLocation.enterLocation other = (ds.SearchingByLocation.enterLocation) obj;
 
     boolean result = true;
-    result = result && getCityInput()
-        .equals(other.getCityInput());
+    result = result && getDataCityInfo()
+        .equals(other.getDataCityInfo());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,8 +173,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + CITYINPUT_FIELD_NUMBER;
-    hash = (53 * hash) + getCityInput().hashCode();
+    hash = (37 * hash) + DATACITYINFO_FIELD_NUMBER;
+    hash = (53 * hash) + getDataCityInfo().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      cityInput_ = "";
+      dataCityInfo_ = "";
 
       return this;
     }
@@ -336,7 +336,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public ds.SearchingByLocation.enterLocation buildPartial() {
       ds.SearchingByLocation.enterLocation result = new ds.SearchingByLocation.enterLocation(this);
-      result.cityInput_ = cityInput_;
+      result.dataCityInfo_ = dataCityInfo_;
       onBuilt();
       return result;
     }
@@ -385,8 +385,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(ds.SearchingByLocation.enterLocation other) {
       if (other == ds.SearchingByLocation.enterLocation.getDefaultInstance()) return this;
-      if (!other.getCityInput().isEmpty()) {
-        cityInput_ = other.cityInput_;
+      if (!other.getDataCityInfo().isEmpty()) {
+        dataCityInfo_ = other.dataCityInfo_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object cityInput_ = "";
+    private java.lang.Object dataCityInfo_ = "";
     /**
-     * <code>string cityInput = 1;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
-    public java.lang.String getCityInput() {
-      java.lang.Object ref = cityInput_;
+    public java.lang.String getDataCityInfo() {
+      java.lang.Object ref = dataCityInfo_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        cityInput_ = s;
+        dataCityInfo_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string cityInput = 1;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getCityInputBytes() {
-      java.lang.Object ref = cityInput_;
+        getDataCityInfoBytes() {
+      java.lang.Object ref = dataCityInfo_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        cityInput_ = b;
+        dataCityInfo_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string cityInput = 1;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
-    public Builder setCityInput(
+    public Builder setDataCityInfo(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      cityInput_ = value;
+      dataCityInfo_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string cityInput = 1;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
-    public Builder clearCityInput() {
+    public Builder clearDataCityInfo() {
       
-      cityInput_ = getDefaultInstance().getCityInput();
+      dataCityInfo_ = getDefaultInstance().getDataCityInfo();
       onChanged();
       return this;
     }
     /**
-     * <code>string cityInput = 1;</code>
+     * <code>string dataCityInfo = 3;</code>
      */
-    public Builder setCityInputBytes(
+    public Builder setDataCityInfoBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      cityInput_ = value;
+      dataCityInfo_ = value;
       onChanged();
       return this;
     }
