@@ -1,0 +1,74 @@
+syntax = "proto3";// specifies the kind of syntax, I am using the version 3 of protocol buffers.
+
+option java_package = "ds.Service1";// specifies the java package it can be modified.
+option java_multiple_files = true;// specifies the way the files are organised by the library, it is fixed.
+option java_outer_classname = "Service1Impl";// specifies the Class Name, I enter the service name + IMPL, which means implementation. It can be modified.
+
+//Creating a GRPC service which is called searchingByLocation
+
+service service1{
+
+	//indicating the method with the term rpc, the method and type of message that is sending and receiving
+
+	rpc displayLocation(stream enterLocation) returns (displayCityInfo){} //Client Streaming
+    rpc checkingMonitoringStations(stream scanCityEntered) returns(stream verifyStationRequested){}//Bidirectional Streaming
+    rpc airQualityResponse(verifyStationRequested) returns(stream waterAirQuality){}//Server Streaming
+
+    }
+
+  //Client streaming - specify what my message is called, which type its contains and assigning its values.
+
+ message enterLocation{
+
+ //it is the type that are in our message and has to convert the message into a series of bites, it has a name and a type
+
+ 	string dataCityInfo = 1;
+
+ }
+
+ //Client streaming - specify what my message return is called, which type its contains and assigning its values.
+
+ message displayCityInfo{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+ 	string dataCityInfo = 1;
+ 	bool emptyCityInput = 2;
+ 	string errorMessage = 3;
+
+ }
+
+  //Bidirectional Streaming - specify what my message is called, which type its contains and assigning its values.
+
+ message scanCityEntered{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+ 	string dataCityInfo = 1;
+
+ }
+
+  //Bidirectional streaming - specify what my message return is called, which type its contains and assigning its values.
+
+ message verifyStationRequested{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+    string dataCityInfo = 1;
+ 	bool checkingStation = 2;
+ 	string stationFound = 3;
+
+ }
+
+
+ //Server streaming - specify what my message return is called, which type its contains and assigning its values.
+
+ message waterAirQuality{
+
+ //it is the type that are in our message and has to convert the message into a series of bites
+
+    string dataCityInfo = 1;
+    string stationFound = 3;
+    string reportAirQuality = 4;
+
+ }
