@@ -526,6 +526,11 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
+	public void setRequestPeriod(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
     // @@protoc_insertion_point(builder_scope:identifyPeriod)
   }

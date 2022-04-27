@@ -47,6 +47,49 @@ package ds.Service2;
 	// Below I implemented each method for Service2.proto
 		  
 	//Client Streaming - Method:requestPeriod, request:periodRequested,response:identifyPeriod.
+	//On this method we are gong to get a stream of messages coming in from 
+	//For this incoming messages we need to implemet a	Streamobserver and hen pas back into to the Grpc library
+		  
+		  public StreamObserver<periodRequested> requestPeriod(StreamObserver<identifyPeriod> responseObserver ){
+			  System.out.println(" On Server, inside the client streaming method");
+			  return  new StreamObserver<periodRequested>() {
+
+				@Override
+				public void onNext(periodRequested request) {
+					System.out.println(" On Server" + request.getStartDate() + request.getEndDate());
+					
+				}
+
+				@Override
+				public void onError(Throwable t) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void onCompleted() {
+					// TODO Auto-generated method stub
+					
+					  //Now build up our response
+					
+										
+					identifyPeriod.Builder responseBuilder = identifyPeriod.newBuilder();
+					
+					String periodMsg = " ";
+										
+					responseBuilder.setRequestPeriod("This is the period required "+ periodMsg);
+					
+					//Build the message 
+					responseObserver.onNext(responseBuilder.build());
+					
+					responseObserver.onCompleted();	
+					
+					
+				}};
+			  
+		  }
+		  
+		  
 		  
 		  
 	//Unary - Method: enterNaturalResourcetype, request:resourseType,response:registrationTypeResponse
