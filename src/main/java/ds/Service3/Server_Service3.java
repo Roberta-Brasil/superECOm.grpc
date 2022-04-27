@@ -38,7 +38,17 @@ import io.grpc.Server;
 	//Extend abstract base class for our own implementation
 	  static class Service3Impl extends service3ImplBase{
 		  
-		// TODO Auto-generated method stub
+		// Below I implemented each method for Service3.proto	
+		  
+		  
+		//Server Streaming - method: enterLocation, request: enterCity, response: displayLocationDetails.
+		  
+		  
+		//Bidirectional Streaming - method:addingDetails, request: stream addInfo, response: responseAddInfo.
+		  
+		  
+		//Server Streaming - method: displayRecorded, request: selectViewInfo, response: responseDataRecorded.
+		  
 
 	}
 

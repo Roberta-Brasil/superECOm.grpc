@@ -252,7 +252,9 @@ public final class service2Grpc {
   /**
    */
   public static final class service2BlockingStub extends io.grpc.stub.AbstractStub<service2BlockingStub> {
-    private service2BlockingStub(io.grpc.Channel channel) {
+    public Object getEnterNaturalResourcetype;
+
+	private service2BlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
@@ -281,6 +283,12 @@ public final class service2Grpc {
       return blockingServerStreamingCall(
           getChannel(), getReturnAirQualitybyPeriodMethod(), getCallOptions(), request);
     }
+
+	public resourseType getEnterNaturalResourcetype(resourseType myResourseType) {
+		return myResourseType;
+		// TODO Auto-generated method stub
+		
+	}
   }
 
   /**

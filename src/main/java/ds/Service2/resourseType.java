@@ -536,6 +536,10 @@ private static final long serialVersionUID = 0L;
   public ds.Service2.resourseType getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
+public String getEnterNaturalResourcetype() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 }
 

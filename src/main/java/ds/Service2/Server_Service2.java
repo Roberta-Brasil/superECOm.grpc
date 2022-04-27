@@ -29,7 +29,7 @@ package ds.Service2;
 
 	private void start() throws IOException, InterruptedException  {
 		System.out.println("Starting gRPC Server");
-		int port = 50051;
+		int port = 50052;
 		
 		//The builder Pattern
 		service2var = ServerBuilder.forPort(port).addService(new Service2Impl()).build().start();
@@ -44,26 +44,35 @@ package ds.Service2;
 	//Extend abstract base class for our own implementation
 	  static class Service2Impl extends service2ImplBase{
 		  
-		// TODO Auto-generated method stub
-
+	// Below I implemented each method for Service2.proto
+		  
+	//Client Streaming - Method:requestPeriod, request:periodRequested,response:identifyPeriod.
+		  
+		  
+	//Unary - Method: enterNaturalResourcetype, request:resourseType,response:registrationTypeResponse
+		
+      @Override
+		  
 	   public void getEnterNaturalResourcetype(resourseType request, StreamObserver<registrationTypeResponse> responseObserver){
 		
 		//Find out what the content of the message sent by the client
-		String myResourseType = request.getMyResourseType();
+		String myResourseType = request.getEnterNaturalResourcetype();
 		System.out.println("Please enter the Natural Resource type? ");
 		System.out.println("It cannot be anything different from Water or Air quality or Both" + myResourseType );
 	
-	//Now build up our response
+	   //Now build up our response
 		
 		registrationTypeResponse.Builder responseBuilder = registrationTypeResponse.newBuilder();
 		
-		responseBuilder.setNaturalResourceRegistered("Natural Resources type registered is "+ myResourseType);
+		responseBuilder.setEnterNaturalResourcetype("Natural Resources type registered is "+ myResourseType);
 		
+		//Build the message 
 		responseObserver.onNext(responseBuilder.build());
 		
 		responseObserver.onCompleted();
 	}
-
+	  }
 	}
-
-}
+    //Server Streaming - method: returnAirQualitybyPeriod, request: identifyPeriod, response: reportAirWaterQuality
+   
+     
