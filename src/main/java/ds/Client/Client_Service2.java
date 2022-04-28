@@ -31,7 +31,9 @@ public class Client_Service2 {
 		
 		//Now build a message 
 		
+		
 		resourseType myResourseType = resourseType.newBuilder().setMyResourseType("Water").build();
+		
 		
 		//Creating a blocking stub, pass the channel to the stub 
 		//The stub is specific to the service
@@ -58,7 +60,8 @@ public class Client_Service2 {
 			@Override
 			public void onNext(identifyPeriod value) {
 				// TODO Auto-generated method stub
-				System.out.println("This is the period requested"+ value.getPeriodMsg());
+				System.out.println("Please enter the period requested to consult Water Polluition: "+ value.getPeriodMsg());
+				
 				
 			}
 
@@ -82,10 +85,11 @@ public class Client_Service2 {
 				
 		StreamObserver<periodRequested>	requestOb = asyncStub.requestPeriod(responseObserver);
 		
-		requestOb.onNext(periodRequested.newBuilder().setStartDate("This is the start date of consultated period: 2020-06-09").build());
-		requestOb.onNext(periodRequested.newBuilder().setEndDate("This is the end date of the consultated period: 2020-09-09").build());
+		requestOb.onNext(periodRequested.newBuilder().setStartDate("  This is the start date of the consultated period: 2020-06-09").build());
+		requestOb.onNext(periodRequested.newBuilder().setEndDate("  This is the end date of the consultated period: 2020-09-09").build());
+		requestOb.onNext(periodRequested.newBuilder().setEndDate("Client has now sent its messages").build());
+		System.out.println("================================= ");
 		
-		System.out.println("Client has now sent its messages");
 		
 		requestOb.onCompleted();
 		
