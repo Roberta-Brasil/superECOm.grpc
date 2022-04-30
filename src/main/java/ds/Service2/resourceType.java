@@ -4,19 +4,19 @@
 package ds.Service2;
 
 /**
- * Protobuf type {@code resourseType}
+ * Protobuf type {@code resourceType}
  */
-public  final class resourseType extends
+public  final class resourceType extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:resourseType)
-    resourseTypeOrBuilder {
+    // @@protoc_insertion_point(message_implements:resourceType)
+    resourceTypeOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use resourseType.newBuilder() to construct.
-  private resourseType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use resourceType.newBuilder() to construct.
+  private resourceType(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private resourseType() {
-    myResourseType_ = "";
+  private resourceType() {
+    myResourceType_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private resourseType(
+  private resourceType(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -46,7 +46,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            myResourseType_ = s;
+            myResourceType_ = s;
             break;
           }
           default: {
@@ -70,45 +70,45 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return ds.Service2.Service2Impl.internal_static_resourseType_descriptor;
+    return ds.Service2.Service2Impl.internal_static_resourceType_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return ds.Service2.Service2Impl.internal_static_resourseType_fieldAccessorTable
+    return ds.Service2.Service2Impl.internal_static_resourceType_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            ds.Service2.resourseType.class, ds.Service2.resourseType.Builder.class);
+            ds.Service2.resourceType.class, ds.Service2.resourceType.Builder.class);
   }
 
-  public static final int MYRESOURSETYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object myResourseType_;
+  public static final int MYRESOURCETYPE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object myResourceType_;
   /**
-   * <code>string myResourseType = 1;</code>
+   * <code>string myResourceType = 1;</code>
    */
-  public java.lang.String getMyResourseType() {
-    java.lang.Object ref = myResourseType_;
+  public java.lang.String getMyResourceType() {
+    java.lang.Object ref = myResourceType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      myResourseType_ = s;
+      myResourceType_ = s;
       return s;
     }
   }
   /**
-   * <code>string myResourseType = 1;</code>
+   * <code>string myResourceType = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getMyResourseTypeBytes() {
-    java.lang.Object ref = myResourseType_;
+      getMyResourceTypeBytes() {
+    java.lang.Object ref = myResourceType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      myResourseType_ = b;
+      myResourceType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -129,8 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getMyResourseTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, myResourseType_);
+    if (!getMyResourceTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, myResourceType_);
     }
     unknownFields.writeTo(output);
   }
@@ -141,8 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getMyResourseTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, myResourseType_);
+    if (!getMyResourceTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, myResourceType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -154,14 +154,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof ds.Service2.resourseType)) {
+    if (!(obj instanceof ds.Service2.resourceType)) {
       return super.equals(obj);
     }
-    ds.Service2.resourseType other = (ds.Service2.resourseType) obj;
+    ds.Service2.resourceType other = (ds.Service2.resourceType) obj;
 
     boolean result = true;
-    result = result && getMyResourseType()
-        .equals(other.getMyResourseType());
+    result = result && getMyResourceType()
+        .equals(other.getMyResourceType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -173,76 +173,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + MYRESOURSETYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getMyResourseType().hashCode();
+    hash = (37 * hash) + MYRESOURCETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMyResourceType().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ds.Service2.resourseType parseFrom(byte[] data)
+  public static ds.Service2.resourceType parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static ds.Service2.resourseType parseFrom(java.io.InputStream input)
+  public static ds.Service2.resourceType parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ds.Service2.resourseType parseDelimitedFrom(java.io.InputStream input)
+  public static ds.Service2.resourceType parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static ds.Service2.resourseType parseDelimitedFrom(
+  public static ds.Service2.resourceType parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static ds.Service2.resourseType parseFrom(
+  public static ds.Service2.resourceType parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(ds.Service2.resourseType prototype) {
+  public static Builder newBuilder(ds.Service2.resourceType prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -271,26 +271,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code resourseType}
+   * Protobuf type {@code resourceType}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:resourseType)
-      ds.Service2.resourseTypeOrBuilder {
+      // @@protoc_insertion_point(builder_implements:resourceType)
+      ds.Service2.resourceTypeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ds.Service2.Service2Impl.internal_static_resourseType_descriptor;
+      return ds.Service2.Service2Impl.internal_static_resourceType_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ds.Service2.Service2Impl.internal_static_resourseType_fieldAccessorTable
+      return ds.Service2.Service2Impl.internal_static_resourceType_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ds.Service2.resourseType.class, ds.Service2.resourseType.Builder.class);
+              ds.Service2.resourceType.class, ds.Service2.resourceType.Builder.class);
     }
 
-    // Construct using ds.Service2.resourseType.newBuilder()
+    // Construct using ds.Service2.resourceType.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -308,7 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      myResourseType_ = "";
+      myResourceType_ = "";
 
       return this;
     }
@@ -316,17 +316,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return ds.Service2.Service2Impl.internal_static_resourseType_descriptor;
+      return ds.Service2.Service2Impl.internal_static_resourceType_descriptor;
     }
 
     @java.lang.Override
-    public ds.Service2.resourseType getDefaultInstanceForType() {
-      return ds.Service2.resourseType.getDefaultInstance();
+    public ds.Service2.resourceType getDefaultInstanceForType() {
+      return ds.Service2.resourceType.getDefaultInstance();
     }
 
     @java.lang.Override
-    public ds.Service2.resourseType build() {
-      ds.Service2.resourseType result = buildPartial();
+    public ds.Service2.resourceType build() {
+      ds.Service2.resourceType result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -334,9 +334,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public ds.Service2.resourseType buildPartial() {
-      ds.Service2.resourseType result = new ds.Service2.resourseType(this);
-      result.myResourseType_ = myResourseType_;
+    public ds.Service2.resourceType buildPartial() {
+      ds.Service2.resourceType result = new ds.Service2.resourceType(this);
+      result.myResourceType_ = myResourceType_;
       onBuilt();
       return result;
     }
@@ -375,18 +375,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof ds.Service2.resourseType) {
-        return mergeFrom((ds.Service2.resourseType)other);
+      if (other instanceof ds.Service2.resourceType) {
+        return mergeFrom((ds.Service2.resourceType)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(ds.Service2.resourseType other) {
-      if (other == ds.Service2.resourseType.getDefaultInstance()) return this;
-      if (!other.getMyResourseType().isEmpty()) {
-        myResourseType_ = other.myResourseType_;
+    public Builder mergeFrom(ds.Service2.resourceType other) {
+      if (other == ds.Service2.resourceType.getDefaultInstance()) return this;
+      if (!other.getMyResourceType().isEmpty()) {
+        myResourceType_ = other.myResourceType_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -404,11 +404,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      ds.Service2.resourseType parsedMessage = null;
+      ds.Service2.resourceType parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (ds.Service2.resourseType) e.getUnfinishedMessage();
+        parsedMessage = (ds.Service2.resourceType) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object myResourseType_ = "";
+    private java.lang.Object myResourceType_ = "";
     /**
-     * <code>string myResourseType = 1;</code>
+     * <code>string myResourceType = 1;</code>
      */
-    public java.lang.String getMyResourseType() {
-      java.lang.Object ref = myResourseType_;
+    public java.lang.String getMyResourceType() {
+      java.lang.Object ref = myResourceType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        myResourseType_ = s;
+        myResourceType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string myResourseType = 1;</code>
+     * <code>string myResourceType = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getMyResourseTypeBytes() {
-      java.lang.Object ref = myResourseType_;
+        getMyResourceTypeBytes() {
+      java.lang.Object ref = myResourceType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        myResourseType_ = b;
+        myResourceType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string myResourseType = 1;</code>
+     * <code>string myResourceType = 1;</code>
      */
-    public Builder setMyResourseType(
+    public Builder setMyResourceType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      myResourseType_ = value;
+      myResourceType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string myResourseType = 1;</code>
+     * <code>string myResourceType = 1;</code>
      */
-    public Builder clearMyResourseType() {
+    public Builder clearMyResourceType() {
       
-      myResourseType_ = getDefaultInstance().getMyResourseType();
+      myResourceType_ = getDefaultInstance().getMyResourceType();
       onChanged();
       return this;
     }
     /**
-     * <code>string myResourseType = 1;</code>
+     * <code>string myResourceType = 1;</code>
      */
-    public Builder setMyResourseTypeBytes(
+    public Builder setMyResourceTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      myResourseType_ = value;
+      myResourceType_ = value;
       onChanged();
       return this;
     }
@@ -499,47 +499,43 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:resourseType)
+    // @@protoc_insertion_point(builder_scope:resourceType)
   }
 
-  // @@protoc_insertion_point(class_scope:resourseType)
-  private static final ds.Service2.resourseType DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:resourceType)
+  private static final ds.Service2.resourceType DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new ds.Service2.resourseType();
+    DEFAULT_INSTANCE = new ds.Service2.resourceType();
   }
 
-  public static ds.Service2.resourseType getDefaultInstance() {
+  public static ds.Service2.resourceType getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<resourseType>
-      PARSER = new com.google.protobuf.AbstractParser<resourseType>() {
+  private static final com.google.protobuf.Parser<resourceType>
+      PARSER = new com.google.protobuf.AbstractParser<resourceType>() {
     @java.lang.Override
-    public resourseType parsePartialFrom(
+    public resourceType parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new resourseType(input, extensionRegistry);
+      return new resourceType(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<resourseType> parser() {
+  public static com.google.protobuf.Parser<resourceType> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<resourseType> getParserForType() {
+  public com.google.protobuf.Parser<resourceType> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public ds.Service2.resourseType getDefaultInstanceForType() {
+  public ds.Service2.resourceType getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-public String getEnterNaturalResourcetype() {
-	// TODO Auto-generated method stub
-	return null;
-}
 
 }
 
