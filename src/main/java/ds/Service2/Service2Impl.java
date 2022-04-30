@@ -25,10 +25,10 @@ public final class Service2Impl {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_identifyPeriod_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_resourseType_descriptor;
+    internal_static_resourceType_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_resourseType_fieldAccessorTable;
+      internal_static_resourceType_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_registrationTypeResponse_descriptor;
   static final 
@@ -50,15 +50,15 @@ public final class Service2Impl {
     java.lang.String[] descriptorData = {
       "\n\016service2.proto\"5\n\017periodRequested\022\021\n\ts" +
       "tartDate\030\001 \001(\t\022\017\n\007endDate\030\002 \001(\t\"#\n\016ident" +
-      "ifyPeriod\022\021\n\tperiodMsg\030\001 \001(\t\"&\n\014resourse" +
-      "Type\022\026\n\016myResourseType\030\001 \001(\t\"=\n\030registra" +
+      "ifyPeriod\022\021\n\tperiodMsg\030\001 \001(\t\"&\n\014resource" +
+      "Type\022\026\n\016myResourceType\030\001 \001(\t\"=\n\030registra" +
       "tionTypeResponse\022!\n\031naturalResourceRegis" +
       "tered\030\002 \001(\t\"Y\n\025reportAirWaterQuality\022\021\n\t" +
-      "periodMsg\030\001 \001(\t\022\026\n\016myResourseType\030\002 \001(\t\022" +
+      "periodMsg\030\001 \001(\t\022\026\n\016myResourceType\030\002 \001(\t\022" +
       "\025\n\rqualityReport\030\003 \001(\t2\323\001\n\010service2\0226\n\rr" +
       "equestPeriod\022\020.periodRequested\032\017.identif" +
       "yPeriod\"\000(\001\022F\n\030enterNaturalResourcetype\022" +
-      "\r.resourseType\032\031.registrationTypeRespons" +
+      "\r.resourceType\032\031.registrationTypeRespons" +
       "e\"\000\022G\n\030returnAirQualitybyPeriod\022\017.identi" +
       "fyPeriod\032\026.reportAirWaterQuality\"\0000\001B\035\n\013" +
       "ds.Service2B\014Service2ImplP\001b\006proto3"
@@ -87,12 +87,12 @@ public final class Service2Impl {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_identifyPeriod_descriptor,
         new java.lang.String[] { "PeriodMsg", });
-    internal_static_resourseType_descriptor =
+    internal_static_resourceType_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_resourseType_fieldAccessorTable = new
+    internal_static_resourceType_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_resourseType_descriptor,
-        new java.lang.String[] { "MyResourseType", });
+        internal_static_resourceType_descriptor,
+        new java.lang.String[] { "MyResourceType", });
     internal_static_registrationTypeResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_registrationTypeResponse_fieldAccessorTable = new
@@ -104,7 +104,7 @@ public final class Service2Impl {
     internal_static_reportAirWaterQuality_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_reportAirWaterQuality_descriptor,
-        new java.lang.String[] { "PeriodMsg", "MyResourseType", "QualityReport", });
+        new java.lang.String[] { "PeriodMsg", "MyResourceType", "QualityReport", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

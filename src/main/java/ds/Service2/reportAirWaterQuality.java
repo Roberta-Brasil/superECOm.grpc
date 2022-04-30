@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private reportAirWaterQuality() {
     periodMsg_ = "";
-    myResourseType_ = "";
+    myResourceType_ = "";
     qualityReport_ = "";
   }
 
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            myResourseType_ = s;
+            myResourceType_ = s;
             break;
           }
           case 26: {
@@ -129,34 +129,34 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int MYRESOURSETYPE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object myResourseType_;
+  public static final int MYRESOURCETYPE_FIELD_NUMBER = 2;
+  private volatile java.lang.Object myResourceType_;
   /**
-   * <code>string myResourseType = 2;</code>
+   * <code>string myResourceType = 2;</code>
    */
-  public java.lang.String getMyResourseType() {
-    java.lang.Object ref = myResourseType_;
+  public java.lang.String getMyResourceType() {
+    java.lang.Object ref = myResourceType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      myResourseType_ = s;
+      myResourceType_ = s;
       return s;
     }
   }
   /**
-   * <code>string myResourseType = 2;</code>
+   * <code>string myResourceType = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getMyResourseTypeBytes() {
-    java.lang.Object ref = myResourseType_;
+      getMyResourceTypeBytes() {
+    java.lang.Object ref = myResourceType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      myResourseType_ = b;
+      myResourceType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -214,8 +214,8 @@ private static final long serialVersionUID = 0L;
     if (!getPeriodMsgBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, periodMsg_);
     }
-    if (!getMyResourseTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, myResourseType_);
+    if (!getMyResourceTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, myResourceType_);
     }
     if (!getQualityReportBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, qualityReport_);
@@ -232,8 +232,8 @@ private static final long serialVersionUID = 0L;
     if (!getPeriodMsgBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, periodMsg_);
     }
-    if (!getMyResourseTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, myResourseType_);
+    if (!getMyResourceTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, myResourceType_);
     }
     if (!getQualityReportBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, qualityReport_);
@@ -256,8 +256,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getPeriodMsg()
         .equals(other.getPeriodMsg());
-    result = result && getMyResourseType()
-        .equals(other.getMyResourseType());
+    result = result && getMyResourceType()
+        .equals(other.getMyResourceType());
     result = result && getQualityReport()
         .equals(other.getQualityReport());
     result = result && unknownFields.equals(other.unknownFields);
@@ -273,8 +273,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PERIODMSG_FIELD_NUMBER;
     hash = (53 * hash) + getPeriodMsg().hashCode();
-    hash = (37 * hash) + MYRESOURSETYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getMyResourseType().hashCode();
+    hash = (37 * hash) + MYRESOURCETYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMyResourceType().hashCode();
     hash = (37 * hash) + QUALITYREPORT_FIELD_NUMBER;
     hash = (53 * hash) + getQualityReport().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -412,7 +412,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       periodMsg_ = "";
 
-      myResourseType_ = "";
+      myResourceType_ = "";
 
       qualityReport_ = "";
 
@@ -443,7 +443,7 @@ private static final long serialVersionUID = 0L;
     public ds.Service2.reportAirWaterQuality buildPartial() {
       ds.Service2.reportAirWaterQuality result = new ds.Service2.reportAirWaterQuality(this);
       result.periodMsg_ = periodMsg_;
-      result.myResourseType_ = myResourseType_;
+      result.myResourceType_ = myResourceType_;
       result.qualityReport_ = qualityReport_;
       onBuilt();
       return result;
@@ -497,8 +497,8 @@ private static final long serialVersionUID = 0L;
         periodMsg_ = other.periodMsg_;
         onChanged();
       }
-      if (!other.getMyResourseType().isEmpty()) {
-        myResourseType_ = other.myResourseType_;
+      if (!other.getMyResourceType().isEmpty()) {
+        myResourceType_ = other.myResourceType_;
         onChanged();
       }
       if (!other.getQualityReport().isEmpty()) {
@@ -603,71 +603,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object myResourseType_ = "";
+    private java.lang.Object myResourceType_ = "";
     /**
-     * <code>string myResourseType = 2;</code>
+     * <code>string myResourceType = 2;</code>
      */
-    public java.lang.String getMyResourseType() {
-      java.lang.Object ref = myResourseType_;
+    public java.lang.String getMyResourceType() {
+      java.lang.Object ref = myResourceType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        myResourseType_ = s;
+        myResourceType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string myResourseType = 2;</code>
+     * <code>string myResourceType = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getMyResourseTypeBytes() {
-      java.lang.Object ref = myResourseType_;
+        getMyResourceTypeBytes() {
+      java.lang.Object ref = myResourceType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        myResourseType_ = b;
+        myResourceType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string myResourseType = 2;</code>
+     * <code>string myResourceType = 2;</code>
      */
-    public Builder setMyResourseType(
+    public Builder setMyResourceType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      myResourseType_ = value;
+      myResourceType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string myResourseType = 2;</code>
+     * <code>string myResourceType = 2;</code>
      */
-    public Builder clearMyResourseType() {
+    public Builder clearMyResourceType() {
       
-      myResourseType_ = getDefaultInstance().getMyResourseType();
+      myResourceType_ = getDefaultInstance().getMyResourceType();
       onChanged();
       return this;
     }
     /**
-     * <code>string myResourseType = 2;</code>
+     * <code>string myResourceType = 2;</code>
      */
-    public Builder setMyResourseTypeBytes(
+    public Builder setMyResourceTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      myResourseType_ = value;
+      myResourceType_ = value;
       onChanged();
       return this;
     }

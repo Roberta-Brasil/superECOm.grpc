@@ -18,21 +18,21 @@ public interface waterAirQualityOrBuilder extends
       getDataCityInfoBytes();
 
   /**
-   * <code>string stationFound = 3;</code>
+   * <code>string stationFound = 2;</code>
    */
   java.lang.String getStationFound();
   /**
-   * <code>string stationFound = 3;</code>
+   * <code>string stationFound = 2;</code>
    */
   com.google.protobuf.ByteString
       getStationFoundBytes();
 
   /**
-   * <code>string reportAirQuality = 4;</code>
+   * <code>string reportAirQuality = 3;</code>
    */
   java.lang.String getReportAirQuality();
   /**
-   * <code>string reportAirQuality = 4;</code>
+   * <code>string reportAirQuality = 3;</code>
    */
   com.google.protobuf.ByteString
       getReportAirQualityBytes();

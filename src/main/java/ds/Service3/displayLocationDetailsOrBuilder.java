@@ -18,11 +18,11 @@ public interface displayLocationDetailsOrBuilder extends
       getCityAddedBytes();
 
   /**
-   * <code>string CityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
   java.lang.String getCityDetails();
   /**
-   * <code>string CityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
   com.google.protobuf.ByteString
       getCityDetailsBytes();

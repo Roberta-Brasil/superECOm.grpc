@@ -17,7 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private responseDataRecorded() {
     displayDataRecorded_ = "";
-    confirmingCityDetails_ = "";
+    cityDetails_ = "";
     naturalResourceLastAdded_ = "";
   }
 
@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            confirmingCityDetails_ = s;
+            cityDetails_ = s;
             break;
           }
           case 26: {
@@ -129,34 +129,34 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CONFIRMINGCITYDETAILS_FIELD_NUMBER = 2;
-  private volatile java.lang.Object confirmingCityDetails_;
+  public static final int CITYDETAILS_FIELD_NUMBER = 2;
+  private volatile java.lang.Object cityDetails_;
   /**
-   * <code>string confirmingCityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
-  public java.lang.String getConfirmingCityDetails() {
-    java.lang.Object ref = confirmingCityDetails_;
+  public java.lang.String getCityDetails() {
+    java.lang.Object ref = cityDetails_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      confirmingCityDetails_ = s;
+      cityDetails_ = s;
       return s;
     }
   }
   /**
-   * <code>string confirmingCityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getConfirmingCityDetailsBytes() {
-    java.lang.Object ref = confirmingCityDetails_;
+      getCityDetailsBytes() {
+    java.lang.Object ref = cityDetails_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      confirmingCityDetails_ = b;
+      cityDetails_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -214,8 +214,8 @@ private static final long serialVersionUID = 0L;
     if (!getDisplayDataRecordedBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, displayDataRecorded_);
     }
-    if (!getConfirmingCityDetailsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, confirmingCityDetails_);
+    if (!getCityDetailsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cityDetails_);
     }
     if (!getNaturalResourceLastAddedBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, naturalResourceLastAdded_);
@@ -232,8 +232,8 @@ private static final long serialVersionUID = 0L;
     if (!getDisplayDataRecordedBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, displayDataRecorded_);
     }
-    if (!getConfirmingCityDetailsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, confirmingCityDetails_);
+    if (!getCityDetailsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cityDetails_);
     }
     if (!getNaturalResourceLastAddedBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, naturalResourceLastAdded_);
@@ -256,8 +256,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getDisplayDataRecorded()
         .equals(other.getDisplayDataRecorded());
-    result = result && getConfirmingCityDetails()
-        .equals(other.getConfirmingCityDetails());
+    result = result && getCityDetails()
+        .equals(other.getCityDetails());
     result = result && getNaturalResourceLastAdded()
         .equals(other.getNaturalResourceLastAdded());
     result = result && unknownFields.equals(other.unknownFields);
@@ -273,8 +273,8 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DISPLAYDATARECORDED_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayDataRecorded().hashCode();
-    hash = (37 * hash) + CONFIRMINGCITYDETAILS_FIELD_NUMBER;
-    hash = (53 * hash) + getConfirmingCityDetails().hashCode();
+    hash = (37 * hash) + CITYDETAILS_FIELD_NUMBER;
+    hash = (53 * hash) + getCityDetails().hashCode();
     hash = (37 * hash) + NATURALRESOURCELASTADDED_FIELD_NUMBER;
     hash = (53 * hash) + getNaturalResourceLastAdded().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -412,7 +412,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       displayDataRecorded_ = "";
 
-      confirmingCityDetails_ = "";
+      cityDetails_ = "";
 
       naturalResourceLastAdded_ = "";
 
@@ -443,7 +443,7 @@ private static final long serialVersionUID = 0L;
     public ds.Service3.responseDataRecorded buildPartial() {
       ds.Service3.responseDataRecorded result = new ds.Service3.responseDataRecorded(this);
       result.displayDataRecorded_ = displayDataRecorded_;
-      result.confirmingCityDetails_ = confirmingCityDetails_;
+      result.cityDetails_ = cityDetails_;
       result.naturalResourceLastAdded_ = naturalResourceLastAdded_;
       onBuilt();
       return result;
@@ -497,8 +497,8 @@ private static final long serialVersionUID = 0L;
         displayDataRecorded_ = other.displayDataRecorded_;
         onChanged();
       }
-      if (!other.getConfirmingCityDetails().isEmpty()) {
-        confirmingCityDetails_ = other.confirmingCityDetails_;
+      if (!other.getCityDetails().isEmpty()) {
+        cityDetails_ = other.cityDetails_;
         onChanged();
       }
       if (!other.getNaturalResourceLastAdded().isEmpty()) {
@@ -603,71 +603,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object confirmingCityDetails_ = "";
+    private java.lang.Object cityDetails_ = "";
     /**
-     * <code>string confirmingCityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
-    public java.lang.String getConfirmingCityDetails() {
-      java.lang.Object ref = confirmingCityDetails_;
+    public java.lang.String getCityDetails() {
+      java.lang.Object ref = cityDetails_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        confirmingCityDetails_ = s;
+        cityDetails_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string confirmingCityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getConfirmingCityDetailsBytes() {
-      java.lang.Object ref = confirmingCityDetails_;
+        getCityDetailsBytes() {
+      java.lang.Object ref = cityDetails_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        confirmingCityDetails_ = b;
+        cityDetails_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string confirmingCityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
-    public Builder setConfirmingCityDetails(
+    public Builder setCityDetails(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      confirmingCityDetails_ = value;
+      cityDetails_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string confirmingCityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
-    public Builder clearConfirmingCityDetails() {
+    public Builder clearCityDetails() {
       
-      confirmingCityDetails_ = getDefaultInstance().getConfirmingCityDetails();
+      cityDetails_ = getDefaultInstance().getCityDetails();
       onChanged();
       return this;
     }
     /**
-     * <code>string confirmingCityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
-    public Builder setConfirmingCityDetailsBytes(
+    public Builder setCityDetailsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      confirmingCityDetails_ = value;
+      cityDetails_ = value;
       onChanged();
       return this;
     }

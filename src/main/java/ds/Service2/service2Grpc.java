@@ -15,8 +15,6 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-import io.grpc.stub.StreamObserver;
-
 /**
  */
 @javax.annotation.Generated(
@@ -61,28 +59,28 @@ public final class service2Grpc {
      return getRequestPeriodMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<ds.Service2.resourseType,
+  private static volatile io.grpc.MethodDescriptor<ds.Service2.resourceType,
       ds.Service2.registrationTypeResponse> getEnterNaturalResourcetypeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "enterNaturalResourcetype",
-      requestType = ds.Service2.resourseType.class,
+      requestType = ds.Service2.resourceType.class,
       responseType = ds.Service2.registrationTypeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<ds.Service2.resourseType,
+  public static io.grpc.MethodDescriptor<ds.Service2.resourceType,
       ds.Service2.registrationTypeResponse> getEnterNaturalResourcetypeMethod() {
-    io.grpc.MethodDescriptor<ds.Service2.resourseType, ds.Service2.registrationTypeResponse> getEnterNaturalResourcetypeMethod;
+    io.grpc.MethodDescriptor<ds.Service2.resourceType, ds.Service2.registrationTypeResponse> getEnterNaturalResourcetypeMethod;
     if ((getEnterNaturalResourcetypeMethod = service2Grpc.getEnterNaturalResourcetypeMethod) == null) {
       synchronized (service2Grpc.class) {
         if ((getEnterNaturalResourcetypeMethod = service2Grpc.getEnterNaturalResourcetypeMethod) == null) {
           service2Grpc.getEnterNaturalResourcetypeMethod = getEnterNaturalResourcetypeMethod = 
-              io.grpc.MethodDescriptor.<ds.Service2.resourseType, ds.Service2.registrationTypeResponse>newBuilder()
+              io.grpc.MethodDescriptor.<ds.Service2.resourceType, ds.Service2.registrationTypeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
                   "service2", "enterNaturalResourcetype"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  ds.Service2.resourseType.getDefaultInstance()))
+                  ds.Service2.resourceType.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   ds.Service2.registrationTypeResponse.getDefaultInstance()))
                   .setSchemaDescriptor(new service2MethodDescriptorSupplier("enterNaturalResourcetype"))
@@ -161,7 +159,7 @@ public final class service2Grpc {
 
     /**
      */
-    public void enterNaturalResourcetype(ds.Service2.resourseType request,
+    public void enterNaturalResourcetype(ds.Service2.resourceType request,
         io.grpc.stub.StreamObserver<ds.Service2.registrationTypeResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getEnterNaturalResourcetypeMethod(), responseObserver);
     }
@@ -186,7 +184,7 @@ public final class service2Grpc {
             getEnterNaturalResourcetypeMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                ds.Service2.resourseType,
+                ds.Service2.resourceType,
                 ds.Service2.registrationTypeResponse>(
                   this, METHODID_ENTER_NATURAL_RESOURCETYPE)))
           .addMethod(
@@ -198,12 +196,6 @@ public final class service2Grpc {
                   this, METHODID_RETURN_AIR_QUALITYBY_PERIOD)))
           .build();
     }
-
-	public void getEnterNaturalResourcetype(resourseType request,
-			StreamObserver<registrationTypeResponse> responseObserver) {
-		// TODO Auto-generated method stub
-		
-	}
   }
 
   /**
@@ -234,7 +226,7 @@ public final class service2Grpc {
 
     /**
      */
-    public void enterNaturalResourcetype(ds.Service2.resourseType request,
+    public void enterNaturalResourcetype(ds.Service2.resourceType request,
         io.grpc.stub.StreamObserver<ds.Service2.registrationTypeResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getEnterNaturalResourcetypeMethod(), getCallOptions()), request, responseObserver);
@@ -252,9 +244,7 @@ public final class service2Grpc {
   /**
    */
   public static final class service2BlockingStub extends io.grpc.stub.AbstractStub<service2BlockingStub> {
-    public Object getEnterNaturalResourcetype;
-
-	private service2BlockingStub(io.grpc.Channel channel) {
+    private service2BlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
@@ -271,7 +261,7 @@ public final class service2Grpc {
 
     /**
      */
-    public ds.Service2.registrationTypeResponse enterNaturalResourcetype(ds.Service2.resourseType request) {
+    public ds.Service2.registrationTypeResponse enterNaturalResourcetype(ds.Service2.resourceType request) {
       return blockingUnaryCall(
           getChannel(), getEnterNaturalResourcetypeMethod(), getCallOptions(), request);
     }
@@ -283,12 +273,6 @@ public final class service2Grpc {
       return blockingServerStreamingCall(
           getChannel(), getReturnAirQualitybyPeriodMethod(), getCallOptions(), request);
     }
-
-	public resourseType getEnterNaturalResourcetype(resourseType myResourseType) {
-		return myResourseType;
-		// TODO Auto-generated method stub
-		
-	}
   }
 
   /**
@@ -312,7 +296,7 @@ public final class service2Grpc {
     /**
      */
     public com.google.common.util.concurrent.ListenableFuture<ds.Service2.registrationTypeResponse> enterNaturalResourcetype(
-        ds.Service2.resourseType request) {
+        ds.Service2.resourceType request) {
       return futureUnaryCall(
           getChannel().newCall(getEnterNaturalResourcetypeMethod(), getCallOptions()), request);
     }
@@ -340,7 +324,7 @@ public final class service2Grpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_ENTER_NATURAL_RESOURCETYPE:
-          serviceImpl.enterNaturalResourcetype((ds.Service2.resourseType) request,
+          serviceImpl.enterNaturalResourcetype((ds.Service2.resourceType) request,
               (io.grpc.stub.StreamObserver<ds.Service2.registrationTypeResponse>) responseObserver);
           break;
         case METHODID_RETURN_AIR_QUALITYBY_PERIOD:

@@ -18,14 +18,14 @@ public interface reportAirWaterQualityOrBuilder extends
       getPeriodMsgBytes();
 
   /**
-   * <code>string myResourseType = 2;</code>
+   * <code>string myResourceType = 2;</code>
    */
-  java.lang.String getMyResourseType();
+  java.lang.String getMyResourceType();
   /**
-   * <code>string myResourseType = 2;</code>
+   * <code>string myResourceType = 2;</code>
    */
   com.google.protobuf.ByteString
-      getMyResourseTypeBytes();
+      getMyResourceTypeBytes();
 
   /**
    * <code>string qualityReport = 3;</code>

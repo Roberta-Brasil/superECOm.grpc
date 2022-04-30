@@ -51,13 +51,13 @@ private static final long serialVersionUID = 0L;
             dataCityInfo_ = s;
             break;
           }
-          case 26: {
+          case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
             stationFound_ = s;
             break;
           }
-          case 34: {
+          case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
             reportAirQuality_ = s;
@@ -129,10 +129,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int STATIONFOUND_FIELD_NUMBER = 3;
+  public static final int STATIONFOUND_FIELD_NUMBER = 2;
   private volatile java.lang.Object stationFound_;
   /**
-   * <code>string stationFound = 3;</code>
+   * <code>string stationFound = 2;</code>
    */
   public java.lang.String getStationFound() {
     java.lang.Object ref = stationFound_;
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string stationFound = 3;</code>
+   * <code>string stationFound = 2;</code>
    */
   public com.google.protobuf.ByteString
       getStationFoundBytes() {
@@ -163,10 +163,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int REPORTAIRQUALITY_FIELD_NUMBER = 4;
+  public static final int REPORTAIRQUALITY_FIELD_NUMBER = 3;
   private volatile java.lang.Object reportAirQuality_;
   /**
-   * <code>string reportAirQuality = 4;</code>
+   * <code>string reportAirQuality = 3;</code>
    */
   public java.lang.String getReportAirQuality() {
     java.lang.Object ref = reportAirQuality_;
@@ -181,7 +181,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string reportAirQuality = 4;</code>
+   * <code>string reportAirQuality = 3;</code>
    */
   public com.google.protobuf.ByteString
       getReportAirQualityBytes() {
@@ -215,10 +215,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, dataCityInfo_);
     }
     if (!getStationFoundBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, stationFound_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stationFound_);
     }
     if (!getReportAirQualityBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reportAirQuality_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reportAirQuality_);
     }
     unknownFields.writeTo(output);
   }
@@ -233,10 +233,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, dataCityInfo_);
     }
     if (!getStationFoundBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, stationFound_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stationFound_);
     }
     if (!getReportAirQualityBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reportAirQuality_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reportAirQuality_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -605,7 +605,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object stationFound_ = "";
     /**
-     * <code>string stationFound = 3;</code>
+     * <code>string stationFound = 2;</code>
      */
     public java.lang.String getStationFound() {
       java.lang.Object ref = stationFound_;
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string stationFound = 3;</code>
+     * <code>string stationFound = 2;</code>
      */
     public com.google.protobuf.ByteString
         getStationFoundBytes() {
@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string stationFound = 3;</code>
+     * <code>string stationFound = 2;</code>
      */
     public Builder setStationFound(
         java.lang.String value) {
@@ -649,7 +649,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string stationFound = 3;</code>
+     * <code>string stationFound = 2;</code>
      */
     public Builder clearStationFound() {
       
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string stationFound = 3;</code>
+     * <code>string stationFound = 2;</code>
      */
     public Builder setStationFoundBytes(
         com.google.protobuf.ByteString value) {
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object reportAirQuality_ = "";
     /**
-     * <code>string reportAirQuality = 4;</code>
+     * <code>string reportAirQuality = 3;</code>
      */
     public java.lang.String getReportAirQuality() {
       java.lang.Object ref = reportAirQuality_;
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reportAirQuality = 4;</code>
+     * <code>string reportAirQuality = 3;</code>
      */
     public com.google.protobuf.ByteString
         getReportAirQualityBytes() {
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reportAirQuality = 4;</code>
+     * <code>string reportAirQuality = 3;</code>
      */
     public Builder setReportAirQuality(
         java.lang.String value) {
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string reportAirQuality = 4;</code>
+     * <code>string reportAirQuality = 3;</code>
      */
     public Builder clearReportAirQuality() {
       
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string reportAirQuality = 4;</code>
+     * <code>string reportAirQuality = 3;</code>
      */
     public Builder setReportAirQualityBytes(
         com.google.protobuf.ByteString value) {

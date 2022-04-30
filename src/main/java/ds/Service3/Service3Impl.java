@@ -55,7 +55,7 @@ public final class Service3Impl {
     java.lang.String[] descriptorData = {
       "\n\016service3.proto\"\036\n\tenterCity\022\021\n\tcityAdd" +
       "ed\030\001 \001(\t\"^\n\026displayLocationDetails\022\021\n\tci" +
-      "tyAdded\030\001 \001(\t\022\023\n\013CityDetails\030\002 \001(\t\022\034\n\024lo" +
+      "tyAdded\030\001 \001(\t\022\023\n\013cityDetails\030\002 \001(\t\022\034\n\024lo" +
       "cationConfirmation\030\003 \001(\010\"~\n\007addInfo\022\031\n\021n" +
       "aturalResourceId\030\001 \001(\t\022\014\n\004wind\030\002 \001(\t\022\023\n\013" +
       "temperature\030\003 \001(\t\022\035\n\025typeOfnaturalDisast" +
@@ -63,16 +63,16 @@ public final class Service3Impl {
       "onseAddInfo\022$\n\034resourcesMessageConfirmat" +
       "ion\030\001 \001(\t\022\024\n\014lastAddedMsg\030\002 \001(\t\022 \n\030natur" +
       "alResourceLastAdded\030\003 \001(\t\",\n\016selectViewI" +
-      "nfo\022\032\n\022viewInfoRegistered\030\001 \001(\t\"t\n\024respo" +
+      "nfo\022\032\n\022viewInfoRegistered\030\001 \001(\t\"j\n\024respo" +
       "nseDataRecorded\022\033\n\023displayDataRecorded\030\001" +
-      " \001(\t\022\035\n\025confirmingCityDetails\030\002 \001(\t\022 \n\030n" +
-      "aturalResourceLastAdded\030\003 \001(\t2\266\001\n\010servic" +
-      "e3\0228\n\renterLocation\022\n.enterCity\032\027.displa" +
-      "yLocationDetails\"\0000\001\0221\n\raddingDetails\022\010." +
-      "addInfo\032\020.responseAddInfo\"\000(\0010\001\022=\n\017displ" +
-      "ayRecorded\022\017.selectViewInfo\032\025.responseDa" +
-      "taRecorded\"\0000\001B\035\n\013ds.Service3B\014Service3I" +
-      "mplP\001b\006proto3"
+      " \001(\t\022\023\n\013cityDetails\030\002 \001(\t\022 \n\030naturalReso" +
+      "urceLastAdded\030\003 \001(\t2\266\001\n\010service3\0228\n\rente" +
+      "rLocation\022\n.enterCity\032\027.displayLocationD" +
+      "etails\"\0000\001\0221\n\raddingDetails\022\010.addInfo\032\020." +
+      "responseAddInfo\"\000(\0010\001\022=\n\017displayRecorded" +
+      "\022\017.selectViewInfo\032\025.responseDataRecorded" +
+      "\"\0000\001B\035\n\013ds.Service3B\014Service3ImplP\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -121,7 +121,7 @@ public final class Service3Impl {
     internal_static_responseDataRecorded_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_responseDataRecorded_descriptor,
-        new java.lang.String[] { "DisplayDataRecorded", "ConfirmingCityDetails", "NaturalResourceLastAdded", });
+        new java.lang.String[] { "DisplayDataRecorded", "CityDetails", "NaturalResourceLastAdded", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

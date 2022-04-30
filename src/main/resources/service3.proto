@@ -33,7 +33,7 @@ service service3{
  //it is the type that are in our message and has to convert the message into a series of bites
 
     string cityAdded = 1;
- 	string CityDetails = 2;
+ 	string cityDetails = 2;
  	bool locationConfirmation = 3;
 
  }
@@ -82,7 +82,7 @@ service service3{
  //it is the type that are in our message and has to convert the message into a series of bites
 
         string displayDataRecorded = 1;
- 	 	string confirmingCityDetails = 2;
+ 	 	string cityDetails = 2;
  	 	string naturalResourceLastAdded = 3;
 
  }

@@ -56,8 +56,8 @@ public final class Service1Impl {
       "Requested\022\024\n\014dataCityInfo\030\001 \001(\t\022\027\n\017check" +
       "ingStation\030\002 \001(\010\022\024\n\014stationFound\030\003 \001(\t\"W" +
       "\n\017waterAirQuality\022\024\n\014dataCityInfo\030\001 \001(\t\022" +
-      "\024\n\014stationFound\030\003 \001(\t\022\030\n\020reportAirQualit" +
-      "y\030\004 \001(\t2\327\001\n\010service1\0227\n\017displayLocation\022" +
+      "\024\n\014stationFound\030\002 \001(\t\022\030\n\020reportAirQualit" +
+      "y\030\003 \001(\t2\327\001\n\010service1\0227\n\017displayLocation\022" +
       "\016.enterLocation\032\020.displayCityInfo\"\000(\001\022M\n" +
       "\032checkingMonitoringStations\022\020.scanCityEn" +
       "tered\032\027.verifyStationRequested\"\000(\0010\001\022C\n\022" +

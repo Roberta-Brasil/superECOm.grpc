@@ -131,7 +131,7 @@ private static final long serialVersionUID = 0L;
   public static final int CITYDETAILS_FIELD_NUMBER = 2;
   private volatile java.lang.Object cityDetails_;
   /**
-   * <code>string CityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
   public java.lang.String getCityDetails() {
     java.lang.Object ref = cityDetails_;
@@ -146,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string CityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
   public com.google.protobuf.ByteString
       getCityDetailsBytes() {
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object cityDetails_ = "";
     /**
-     * <code>string CityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
     public java.lang.String getCityDetails() {
       java.lang.Object ref = cityDetails_;
@@ -595,7 +595,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string CityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
     public com.google.protobuf.ByteString
         getCityDetailsBytes() {
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string CityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
     public Builder setCityDetails(
         java.lang.String value) {
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string CityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
     public Builder clearCityDetails() {
       
@@ -633,7 +633,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string CityDetails = 2;</code>
+     * <code>string cityDetails = 2;</code>
      */
     public Builder setCityDetailsBytes(
         com.google.protobuf.ByteString value) {

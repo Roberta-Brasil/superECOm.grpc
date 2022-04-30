@@ -18,14 +18,14 @@ public interface responseDataRecordedOrBuilder extends
       getDisplayDataRecordedBytes();
 
   /**
-   * <code>string confirmingCityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
-  java.lang.String getConfirmingCityDetails();
+  java.lang.String getCityDetails();
   /**
-   * <code>string confirmingCityDetails = 2;</code>
+   * <code>string cityDetails = 2;</code>
    */
   com.google.protobuf.ByteString
-      getConfirmingCityDetailsBytes();
+      getCityDetailsBytes();
 
   /**
    * <code>string naturalResourceLastAdded = 3;</code>
