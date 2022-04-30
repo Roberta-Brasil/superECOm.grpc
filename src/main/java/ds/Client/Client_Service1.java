@@ -1,8 +1,13 @@
 package ds.Client;
 
+import java.util.Iterator;
+
+import ds.Service1.verifyStationRequested;
+import ds.Service1.waterAirQuality;
 import ds.Service1.displayCityInfo;
 import ds.Service1.enterLocation;
 import ds.Service1.service1Grpc;
+import ds.Service1.service1Grpc.service1BlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
@@ -21,12 +26,13 @@ public class Client_Service1 {
 		//Generic code is generic
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
 		service1Grpc.service1Stub asyncStub = service1Grpc.newStub(channel);			
+		service1BlockingStub stubB = service1Grpc.newBlockingStub(channel);
 		
 		
-		//Now build a message 
 		
-		////Client streaming - method: displayLocation, request: enterLocation, response:displayCityInfo
+		//Client streaming - method: displayLocation, request: enterLocation, response:displayCityInfo
 		
+		//Now building the message 
 		
 				StreamObserver<displayCityInfo> responseObserver = new StreamObserver<displayCityInfo>()
 				{
@@ -49,11 +55,13 @@ public class Client_Service1 {
 					@Override
 					public void onCompleted() {
 						// TODO Auto-generated method stub
-						
+					
 					}
-		
-
-	};
+					};
+	
+	
+    // Now building up the response for Client Streaming
+    
 	
 	StreamObserver<enterLocation> requestObserver = asyncStub.displayLocation(responseObserver);
 	
@@ -68,15 +76,76 @@ public class Client_Service1 {
 	
 	    requestObserver.onCompleted();
     
-try {
+   try {
 	Thread.sleep(4500);
-} catch (InterruptedException e) {
+   } catch (InterruptedException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
-}
-channel.shutdownNow();
+  }
+ 
+   //channel.shutdownNow();
+   	
+		        
+  /*Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	 
+    
+    StreamObserver<scanCityEntered> request = asyncStub.checkingMonitoringStations(response);
+    
+    
+    	scanCityEntered rm = scanCityEntered.newBuilder().setDataCityInfo("Roma").build();
+    	try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	requestObserver.onNext(rm);
+    	//requestObserver.onCompleted();
+    	
+    }
 
+    requestObserver.onCompleted();
+    
+    while (true) {
+    	try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+  
+  StreamObserver<verifyStationRequested> reply = new StreamObserver<verifyStationRequested>() {
+	
+    @Override
+    public void onNext(verifyStationRequested rm) {
+        System.out.printf(rm.getDataCityInfo(), rm.getCheckingStation(), rm.getStationFound());
+    }
+
+    @Override
+    public void onCompleted() {
+    }
+
+	@Override
+	public void onError(Throwable t) {
+		// TODO Auto-generated method stub
+		*/
+
+// Server Streaming
+
+	verifyStationRequested request = verifyStationRequested.newBuilder().setDataCityInfo("Dublin").build();	
+	
+	Iterator<waterAirQuality> responses = stubB.airQualityResponse(request);
+	while (responses.hasNext()) {
+		waterAirQuality rm = responses.next();
+		System.out.println(String.valueOf( rm.getDataCityInfo()));
+	}
+	channel.shutdownNow();
+
+	};
 }
 
-}
+
+
+
+
 
