@@ -51,14 +51,17 @@ public class Server_Service1 extends service1ImplBase{
 	
 	@Override
 	public StreamObserver<enterLocation> displayLocation(StreamObserver<displayCityInfo> responseObserver) {
-		System.out.println("Please enter your current City: ");
+		
+		
+		System.out.println("On Server: Inside the Client Streaming method... ");
 		return new StreamObserver<enterLocation>() {
 	       
 
 	        @Override
 	        public void onNext(enterLocation request) {
-	                System.out.println(request.getDataCityInfo());
-	            
+	                
+	                System.out.println("Please enter your current location: ");
+				    System.out.println(request.getDataCityInfo());
 	        }
 
 	        @Override
@@ -66,10 +69,11 @@ public class Server_Service1 extends service1ImplBase{
 	        	
 	        	// Now build up our response	        	
 	            responseObserver.onNext(displayCityInfo.newBuilder()
-	            	.setDataCityInfo("Dublin is your current Location")	
+	            	.setDataCityInfo("Dublin")	
 	                .setEmptyCityInput(false)
-	                .setErrorMessage("Location not found")
+	                .setErrorMessage("The Location was registered sucessfully!")
 	                .build());
+	            System.out.println("=============================================================");	
 	            responseObserver.onCompleted();
 	        }
 
@@ -88,15 +92,15 @@ public class Server_Service1 extends service1ImplBase{
 	@Override
 	public StreamObserver<scanCityEntered> checkingMonitoringStations(StreamObserver< verifyStationRequested> responseObserver) {
 		return new StreamObserver<scanCityEntered>() {
-	        int count;
+	        
 	        
 	        @Override
 	        public void onNext(scanCityEntered rq) {
-	            count++;
-	            System.out.println(rq.getDataCityInfo());
-	            for (int i = 0; i < 3; i++) {
-	    	    	verifyStationRequested rm = verifyStationRequested.newBuilder().setDataCityInfo("Server message: The city added is: " + i).build();
-	    	    	verifyStationRequested rm1 = verifyStationRequested.newBuilder().setStationFound("Server message: The station was found in this area" + i).build();
+	            
+	                System.out.println(rq.getDataCityInfo());
+	            
+	    	    	verifyStationRequested rm = verifyStationRequested.newBuilder().setDataCityInfo("Server message: The city added is: " + rq.getDataCityInfo()).build();
+	    	    	verifyStationRequested rm1 = verifyStationRequested.newBuilder().setStationFound("Server message: The station was found in this area: " + rq.getDataCityInfo()).build();
 
 	    	    	try {
 	    				Thread.sleep(1500);
@@ -106,19 +110,19 @@ public class Server_Service1 extends service1ImplBase{
 	    			}
 	    	    	responseObserver.onNext(rm);
 	    	    }
-	            
-	        }
-
-	        @Override
-	        public void onCompleted() {
-	            responseObserver.onCompleted();
-	        }
 
 			@Override
 			public void onError(Throwable t) {
 				// TODO Auto-generated method stub
 				
 			}
+
+			@Override
+			public void onCompleted() {
+				// TODO Auto-generated method stub
+				
+			}
+	               
 
 	    };
 	}
@@ -131,8 +135,9 @@ public class Server_Service1 extends service1ImplBase{
 public void airQualityResponse(verifyStationRequested request, StreamObserver<waterAirQuality> responseObserver){
 
 //Find out what the content of the message sent by the client
-String dataCityInfo = request.getDataCityInfo();
-System.out.println(dataCityInfo );
+	
+System.out.println("Please enter the city you would like to check " );	
+String dataCityInfo =  request.getDataCityInfo();
 
 
 //Now build up our response
@@ -145,16 +150,15 @@ responseObserver.onNext(responseBuilder.build());
 
 
 //Second message
-String stationFound = "The Station find is " + dataCityInfo;
-responseBuilder.setStationFound("Server streaming: The station found is in "+ stationFound );
+String stationFound = "The Monitoring Station found for this area is "  + dataCityInfo + " environment station";
+responseBuilder.setStationFound("Server streaming: "+ stationFound );
 responseObserver.onNext(responseBuilder.build());
 
 //Later messages
-String reportAirQuality = ("Server streaming: On the city requested above, we have relevant some water/Air samples of sulphur dioxide, "
-                    + "carbon dioxide and oxides on the air and water"); 
+String reportAirQuality = (" On the city requested above, There is no evidence of pollutant fo this area "); 
 
 
-responseBuilder.setReportAirQuality("Here is you report "+ reportAirQuality);
+responseBuilder.setReportAirQuality("Server Streaming: Here is your Air/Quality report "+ reportAirQuality);
 responseObserver.onNext(responseBuilder.build());
 
 //to the client knows I finished the messages

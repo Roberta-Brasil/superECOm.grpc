@@ -26,7 +26,8 @@ public class Client_Service1 {
 		
 		//Generic code is generic
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
-		service1Grpc.service1Stub asyncStub = service1Grpc.newStub(channel);			
+		service1Grpc.service1Stub asyncStub = service1Grpc.newStub(channel);	
+		service1Grpc.service1Stub asyncStubB = service1Grpc.newStub(channel);
 		service1BlockingStub stubB = service1Grpc.newBlockingStub(channel);
 		
 		
@@ -41,9 +42,9 @@ public class Client_Service1 {
 					@Override
 					public void onNext(displayCityInfo value) {
 						
-						System.out.println("Server says: " + value.getDataCityInfo());
-						System.out.println("Server says: " + value.getEmptyCityInput());
-						System.out.println("Server says: " + value.getErrorMessage());
+						
+						 System.out.println(" The city entered was " + value.getDataCityInfo());
+						 
 						
 					}
 
@@ -57,9 +58,18 @@ public class Client_Service1 {
 					public void onCompleted() {
 						// TODO Auto-generated method stub
 					
+						//To wait a bit before execute next method
+						try {
+							Thread.sleep(15000);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
 					}
+										
 					};
-	
+
 	
     // Now building up the response for Client Streaming
     
@@ -67,7 +77,7 @@ public class Client_Service1 {
 	StreamObserver<enterLocation> requestObserver = asyncStub.displayLocation(responseObserver);
 	
 	requestObserver.onNext(enterLocation.newBuilder().setDataCityInfo("Dublin").build());
-	
+	 System.out.println("=============================================================");
 	try {
 		Thread.sleep(1500);
 	} catch (InterruptedException e) {
@@ -87,7 +97,7 @@ public class Client_Service1 {
    //channel.shutdownNow();
    	
 		        
-  //Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	 
+  /*Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	 
 
 StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifyStationRequested>() {
 			
@@ -109,11 +119,10 @@ StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifySta
 			}
 	    };
 	    
-	    StreamObserver<scanCityEntered> requestOb = asyncStub.checkingMonitoringStations(responseObserver);
+	    StreamObserver<scanCityEntered> requestOb = asyncStubB.checkingMonitoringStations(responseObserver);
 	    
 	    
-	    for (int i = 0; i < 3; i++) {
-	    	scanCityEntered rm = scanCityEntered.newBuilder().setDataCityInfo ("Roma" + i).build();
+	    	scanCityEntered rm = scanCityEntered.newBuilder().setDataCityInfo ("Roma").build();
 	    	try {
 				Thread.sleep(1500);
 			} catch (InterruptedException e) {
@@ -139,18 +148,21 @@ StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifySta
 	    //channel.shutdownNow();
 	    
 
-	}
+	}*/
 
 		
 
 // Server Streaming
-
-	verifyStationRequested request = verifyStationRequested.newBuilder().setDataCityInfo("Dublin").build();	
+   
+   System.out.println("=============================================================");
+	verifyStationRequested request = verifyStationRequested.newBuilder().setDataCityInfo(" Dublin ").build();	
 	
 	Iterator<waterAirQuality> responses = stubB.airQualityResponse(request);
 	while (responses.hasNext()) {
 		waterAirQuality rm = responses.next();
 		System.out.println(String.valueOf( rm.getDataCityInfo()));
+		System.out.println(String.valueOf( rm.getStationFound()));
+		System.out.println(String.valueOf( rm.getReportAirQuality()));
 	}
 	channel.shutdownNow();
 

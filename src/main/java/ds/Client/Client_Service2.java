@@ -53,10 +53,19 @@ public class Client_Service2 {
 						@Override
 						public void onCompleted() {
 							// TODO Auto-generated method stub
-						
+							
+							try {
+								Thread.sleep(15000);
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+
+										
 						}
 						};
 		
+						
 		
 	    // Now building up the response for Client Streaming
 	    
@@ -86,7 +95,7 @@ public class Client_Service2 {
 		//Unary - Method: enterNaturalResourcetype, request:resourseType,response:registrationTypeResponse
 		
 	   System.out.println("=============================================================");
-	   resourceType request = resourceType.newBuilder().setMyResourceType("On Server: Water").build();
+	   resourceType request = resourceType.newBuilder().setMyResourceType("On Server: Please enter the natural resource type to consult. It can be 'Water' 'Air' or'Both' ").build();
 
 	   registrationTypeResponse response = stubB.enterNaturalResourcetype(request);
 

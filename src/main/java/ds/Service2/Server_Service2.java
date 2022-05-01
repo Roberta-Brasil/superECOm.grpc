@@ -95,8 +95,7 @@ import simpleMDNS.SimpleServiceRegistration1;
 		System.out.println(request.getMyResourceType());
 		
 		//Now building up our response and the message
-		 registrationTypeResponse reply = registrationTypeResponse.newBuilder().setNaturalResourceRegistered("Please enter the natural resource type to consult. "+
-		 		" It can be 'Water' 'Air' or'Both' "+ request.getMyResourceType()).build();
+		 registrationTypeResponse reply = registrationTypeResponse.newBuilder().setNaturalResourceRegistered("The Natural resource type was resgistered sucessfully " + request.getMyResourceType()).build();
 
         
 		responseObserver.onNext( reply ); 
