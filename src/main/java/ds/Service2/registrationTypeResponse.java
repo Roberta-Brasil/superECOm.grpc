@@ -84,6 +84,10 @@ private static final long serialVersionUID = 0L;
   public static final int NATURALRESOURCEREGISTERED_FIELD_NUMBER = 2;
   private volatile java.lang.Object naturalResourceRegistered_;
   /**
+   * <pre>
+   *ver se é para estã na posição 1
+   * </pre>
+   *
    * <code>string naturalResourceRegistered = 2;</code>
    */
   public java.lang.String getNaturalResourceRegistered() {
@@ -99,6 +103,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   *ver se é para estã na posição 1
+   * </pre>
+   *
    * <code>string naturalResourceRegistered = 2;</code>
    */
   public com.google.protobuf.ByteString
@@ -420,6 +428,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object naturalResourceRegistered_ = "";
     /**
+     * <pre>
+     *ver se é para estã na posição 1
+     * </pre>
+     *
      * <code>string naturalResourceRegistered = 2;</code>
      */
     public java.lang.String getNaturalResourceRegistered() {
@@ -435,6 +447,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *ver se é para estã na posição 1
+     * </pre>
+     *
      * <code>string naturalResourceRegistered = 2;</code>
      */
     public com.google.protobuf.ByteString
@@ -451,6 +467,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     *ver se é para estã na posição 1
+     * </pre>
+     *
      * <code>string naturalResourceRegistered = 2;</code>
      */
     public Builder setNaturalResourceRegistered(
@@ -464,6 +484,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *ver se é para estã na posição 1
+     * </pre>
+     *
      * <code>string naturalResourceRegistered = 2;</code>
      */
     public Builder clearNaturalResourceRegistered() {
@@ -473,6 +497,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     *ver se é para estã na posição 1
+     * </pre>
+     *
      * <code>string naturalResourceRegistered = 2;</code>
      */
     public Builder setNaturalResourceRegisteredBytes(

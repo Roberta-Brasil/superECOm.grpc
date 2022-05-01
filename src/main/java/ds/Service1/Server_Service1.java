@@ -82,15 +82,47 @@ public class Server_Service1 extends service1ImplBase{
 	    };
 	}
 	
-/*Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	  
+//Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	  
 	
 
 	@Override
-	public StreamObserver<scanCityEntered> checkingMonitoringStations(
-			StreamObserver<verifyStationRequested> responseObserver) {
-		// TODO Auto-generated method stub
-		return super.checkingMonitoringStations(responseObserver);
-	}*/
+	public StreamObserver<scanCityEntered> checkingMonitoringStations(StreamObserver< verifyStationRequested> responseObserver) {
+		return new StreamObserver<scanCityEntered>() {
+	        int count;
+	        
+	        @Override
+	        public void onNext(scanCityEntered rq) {
+	            count++;
+	            System.out.println(rq.getDataCityInfo());
+	            for (int i = 0; i < 3; i++) {
+	    	    	verifyStationRequested rm = verifyStationRequested.newBuilder().setDataCityInfo("Server message: The city added is: " + i).build();
+	    	    	verifyStationRequested rm1 = verifyStationRequested.newBuilder().setStationFound("Server message: The station was found in this area" + i).build();
+
+	    	    	try {
+	    				Thread.sleep(1500);
+	    			} catch (InterruptedException e) {
+	    				// TODO Auto-generated catch block
+	    				e.printStackTrace();
+	    			}
+	    	    	responseObserver.onNext(rm);
+	    	    }
+	            
+	        }
+
+	        @Override
+	        public void onCompleted() {
+	            responseObserver.onCompleted();
+	        }
+
+			@Override
+			public void onError(Throwable t) {
+				// TODO Auto-generated method stub
+				
+			}
+
+	    };
+	}
+		
 
 //Server streaming - method: airQualityResponse, request:verifyStationRequested, response: waterAirQuality
 	

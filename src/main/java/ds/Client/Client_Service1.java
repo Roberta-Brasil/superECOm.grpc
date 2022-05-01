@@ -6,6 +6,7 @@ import ds.Service1.verifyStationRequested;
 import ds.Service1.waterAirQuality;
 import ds.Service1.displayCityInfo;
 import ds.Service1.enterLocation;
+import ds.Service1.scanCityEntered;
 import ds.Service1.service1Grpc;
 import ds.Service1.service1Grpc.service1BlockingStub;
 import io.grpc.ManagedChannel;
@@ -86,49 +87,61 @@ public class Client_Service1 {
    //channel.shutdownNow();
    	
 		        
-  /*Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	 
-    
-    StreamObserver<scanCityEntered> request = asyncStub.checkingMonitoringStations(response);
-    
-    
-    	scanCityEntered rm = scanCityEntered.newBuilder().setDataCityInfo("Roma").build();
-    	try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	requestObserver.onNext(rm);
-    	//requestObserver.onCompleted();
-    	
-    }
+  //Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	 
 
-    requestObserver.onCompleted();
-    
-    while (true) {
-    	try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }
-  
-  StreamObserver<verifyStationRequested> reply = new StreamObserver<verifyStationRequested>() {
-	
-    @Override
-    public void onNext(verifyStationRequested rm) {
-        System.out.printf(rm.getDataCityInfo(), rm.getCheckingStation(), rm.getStationFound());
-    }
+StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifyStationRequested>() {
+			
+	        @Override
+	        public void onNext(verifyStationRequested rm) {
+	            System.out.println(rm.getDataCityInfo());
+                    System.out.println(rm.getCheckingStation());
+                    System.out.println(rm.getStationFound());
+	        }
 
-    @Override
-    public void onCompleted() {
-    }
+	        @Override
+	        public void onCompleted() {
+	        }
 
-	@Override
-	public void onError(Throwable t) {
-		// TODO Auto-generated method stub
-		*/
+			@Override
+			public void onError(Throwable t) {
+				// TODO Auto-generated method stub
+				
+			}
+	    };
+	    
+	    StreamObserver<scanCityEntered> requestOb = asyncStub.checkingMonitoringStations(responseObserver);
+	    
+	    
+	    for (int i = 0; i < 3; i++) {
+	    	scanCityEntered rm = scanCityEntered.newBuilder().setDataCityInfo ("Roma" + i).build();
+	    	try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	requestOb.onNext(rm);
+	    	//requestObserver.onCompleted();
+	    	
+	    }
+
+	    requestObserver.onCompleted();
+	    
+	    while (true) {
+	    	try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
+	    
+	    //channel.shutdownNow();
+	    
+
+	}
+
+		
 
 // Server Streaming
 

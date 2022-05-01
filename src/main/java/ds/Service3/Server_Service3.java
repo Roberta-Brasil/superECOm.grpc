@@ -85,45 +85,55 @@ public void enterLocation(enterCity request, StreamObserver<displayLocationDetai
       responseObserver.onCompleted();
 
 }
-
 		  	  
-		/*Bidirectional Streaming - method:addingDetails, request: stream addInfo, response: responseAddInfo.
+		//Bidirectional Streaming - method:addingDetails, request: stream addInfo, response: responseAddInfo.
 		  
-		  public StreamObserver<addInfo> addingDetails(StreamObserver<responseAddInfo> responseObserver) {
-				
-				return new StreamObserver<addInfo> () {
+@Override
 
-					@Override
-					public void onNext(addInfo request) {
-						System.out.println("Receiving Natural resource Id: "+ request.getNaturalResourceId() + " wind: "+ request.getWind() + " temperature: "+ request.getTemperature() +  " type of disaster: " + request.getTypeOfnaturalDisaster() + " type of pollutant: " + request.getTypeOfPollutan());
-						
-						String naturalResourceLastAdded =  toString((request.getNaturalResourceId()), request.getWind(),request.getTemperature(),request.getTypeOfnaturalDisaster(),request.getTypeOfPollutan());
-				        String resourcesMessageConfirmation = "This is your last natural resource information added";
-		                String NaturalResourceLastAdded = "Thanks for you contribution. the information was added sucssefully";
-						responseAddInfo reply = responseAddInfo.newBuilder().setResourcesMessageConfirmation(request.getResourcesMessageConfirmation().setLastAddedMsg(request.getLastAddedMsg().setNaturalResourceLastAdded(request.getNaturalResourceLastAdded()).build()));
-						
-						responseObserver.onNext(reply);
-						
-					}
+public StreamObserver<addInfo> checkingMonitoringStations(StreamObserver<verifyStationRequested> responseObserver) {
+	return new StreamObserver<addInfo>() {
+        int count;
+        
+        @Override
+        public void onNext(addInfo rq) {
+                count++;
+                System.out.println(rq.getNaturalResourceId());
+                System.out.println(rq.getWind());
+                System.out.println(rq.getTemperature());
+                System.out.println(rq.getTypeOfnaturalDisaster());
+                System.out.println(rq.getTypeOfPollutan());
+            
+            for (int i = 0; i < 3; i++) {
+    	    	    responseAddInfo rm0 = responseAddInfo.newBuilder().setResourcesMessageConfirmation("Server message: The city added is: " + i).build();
+                    responseAddInfo rm1 = responseAddInfo.newBuilder().setLastAddedMsg("Server message: Checking station..." + i).build();
+                    responseAddInfo rm2 = responseAddInfo.newBuilder().setNaturalResourceLastAdded("Server message: Thanks for you contribution. the information was added sucssefully" + i).build();
 
-					@Override
-					public void onError(Throwable t) {
-						
-						t.printStackTrace();
-						
-					}
+    	    	try {
+    				Thread.sleep(1500);
+    			} catch (InterruptedException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+    	    	
+    	    	responseObserver.onNext(null);
+    	    	//responseObserver.onNext(rm);
+    	    }
+            
+        }
 
-					@Override
-					public void onCompleted() {
-						System.out.println("receiving adding details completed ");
-						
-						//completed too
-						responseObserver.onCompleted();
-										
-				}
-					
-		};
-		} */
+        @Override
+        public void onCompleted() {
+            responseObserver.onCompleted();
+        }
+
+		@Override
+		public void onError(Throwable t) {
+			// TODO Auto-generated method stub
+			
+		}
+
+    };
+}
 		  
 
 		//Server Streaming - method: displayRecorded, request: selectViewInfo, response: responseDataRecorded.
@@ -142,7 +152,7 @@ public void enterLocation(enterCity request, StreamObserver<displayLocationDetai
           responseDataRecorded.Builder responseBuilder = responseDataRecorded.newBuilder();
 
          //First message
-          responseBuilder.setDisplayDataRecorded("Server streaming: Thelast added data recorded was : ");
+          responseBuilder.setDisplayDataRecorded("Server streaming: The last added data recorded was : ");
           responseObserver.onNext(responseBuilder.build());
 
 

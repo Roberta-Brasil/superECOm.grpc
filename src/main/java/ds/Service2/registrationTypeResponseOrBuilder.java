@@ -8,10 +8,18 @@ public interface registrationTypeResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   *ver se é para estã na posição 1
+   * </pre>
+   *
    * <code>string naturalResourceRegistered = 2;</code>
    */
   java.lang.String getNaturalResourceRegistered();
   /**
+   * <pre>
+   *ver se é para estã na posição 1
+   * </pre>
+   *
    * <code>string naturalResourceRegistered = 2;</code>
    */
   com.google.protobuf.ByteString

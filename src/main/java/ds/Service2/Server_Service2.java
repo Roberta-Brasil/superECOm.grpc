@@ -50,11 +50,11 @@ import simpleMDNS.SimpleServiceRegistration1;
 	// Below I implemented each method for Service2.proto
 		  
 		  
-	/*Client Streaming - Method:requestPeriod, request:periodRequested,response:identifyPeriod.
+	//Client Streaming - Method:requestPeriod, request:periodRequested,response:identifyPeriod.
 		
 		@Override	  
 		  public StreamObserver<periodRequested> requestPeriod(StreamObserver<identifyPeriod> responseObserver ){
-			  System.out.println(" On Server, inside the client streaming method");
+			  System.out.println(" On Server: inside the client streaming method");
 			  return  new StreamObserver<periodRequested>() {
 
 				@Override
@@ -66,14 +66,11 @@ import simpleMDNS.SimpleServiceRegistration1;
 				
 				@Override
 				public void onCompleted() {
-					// TODO Auto-generated method stub
-					
-					  					
+										  					
 					// Now build up our response for client Streaming
 					
 		            responseObserver.onNext(identifyPeriod.newBuilder()
-		            	.setPeriodMsg("The period requested to consult Water/Air polluition was registered sucessfully ")	
-		                .build());
+		            	.setPeriodMsg("The period requested to consult Water/Air polluition was : 2021-05-06 to 2021-08-06").build());
 		            responseObserver.onCompleted();
 		        }
 
@@ -84,33 +81,31 @@ import simpleMDNS.SimpleServiceRegistration1;
 				}
 
 		    };
-		}*/
+		}
 		  
 			  
-	/*Unary - Method: enterNaturalResourcetype, request:resourseType,response:registrationTypeResponse
+	//Unary - Method: enterNaturalResourcetype, request:resourseType,response:registrationTypeResponse
 		
       @Override
-		  
-	   public void getEnterNaturalResourcetype(resourseType request, StreamObserver<registrationTypeResponse> responseObserver){
-		
+				
     	    	  
 		//Find out what the content of the message sent by the client
+        public void enterNaturalResourcetype(resourceType request, StreamObserver<registrationTypeResponse> responseObserver) {
+		
+		System.out.println(request.getMyResourceType());
+		
+		//Now building up our response and the message
+		 registrationTypeResponse reply = registrationTypeResponse.newBuilder().setNaturalResourceRegistered("Please enter the natural resource type to consult. "+
+		 		" It can be 'Water' 'Air' or'Both' "+ request.getMyResourceType()).build();
 
-		String myResourseType = request.getEnterNaturalResourcetype();
-		System.out.println(myResourseType);
-	
-	   //Now build up our response
-				
-		registrationTypeResponse.Builder responseBuilder = registrationTypeResponse.newBuilder();
+        
+		responseObserver.onNext( reply ); 
 		
-		responseBuilder.setNaturalResourceRegistered("Natural Resources type registered is "+ myResourseType);
-		
-		//Build the message 
-		responseObserver.onNext(responseBuilder.build());
-		
+		//to the client knows I finished the messages
+
 		responseObserver.onCompleted();
-	}*/
-	 
+		
+      }
 	
     //Server Streaming - method: returnAirQualitybyPeriod, request: identifyPeriod, response: reportAirWaterQuality
  
@@ -136,15 +131,15 @@ import simpleMDNS.SimpleServiceRegistration1;
 	//Second message
 
 	//String myResourceType = "The Station find is " + dataCityInfo;
-	responseBuilder.setMyResourceType("The Natural resource entered to search the quality was Water");
+	responseBuilder.setMyResourceType("The Natural resource type Water was sucessfully registered");
 	responseObserver.onNext(responseBuilder.build());
 
 	//Later messages
-	String qualityReport = ("Server streaming: On the city requested above, we have relevant some water/Air samples of sulphur dioxide, "
+	String qualityReport = (" On the city requested above, we have relevant some water/Air samples of sulphur dioxide, "
 	                    + "carbon dioxide and oxides on the air and water"); 
 
 
-	responseBuilder.setQualityReport("Here is you report ");
+	responseBuilder.setQualityReport("Server Streaming : Here is you report " + qualityReport);
 	responseObserver.onNext(responseBuilder.build());
 
 	//to the client knows I finished the messages

@@ -4,7 +4,9 @@ import java.util.Iterator;
 
 import ds.Service2.identifyPeriod;
 import ds.Service2.periodRequested;
+import ds.Service2.registrationTypeResponse;
 import ds.Service2.reportAirWaterQuality;
+import ds.Service2.resourceType;
 import ds.Service2.service2Grpc;
 import ds.Service2.service2Grpc.service2BlockingStub;
 import io.grpc.ManagedChannel;
@@ -38,7 +40,7 @@ public class Client_Service2 {
 						@Override
 						public void onNext(identifyPeriod value) {
 							
-							System.out.println("The period requested is " + value.getPeriodMsg());
+							System.out.println("Please enter the Period to consult Water/Air polluition : ");
 													
 						}
 
@@ -60,8 +62,8 @@ public class Client_Service2 {
 	    
 		
 		StreamObserver<periodRequested> requestObserver = asyncStub.requestPeriod(responseObserver);
-		
-		requestObserver.onNext(periodRequested.newBuilder().setStartDate("2021-05-06").setEndDate("2021-08-06").build());
+		System.out.println("=============================================================");
+		requestObserver.onNext(periodRequested.newBuilder().setStartDate(" The user entered from : 2021-05-06").setEndDate(" to 2021-08-06").build());
 		
 		try {
 			Thread.sleep(1500);
@@ -83,17 +85,27 @@ public class Client_Service2 {
 		
 		//Unary - Method: enterNaturalResourcetype, request:resourseType,response:registrationTypeResponse
 		
-		
+	   System.out.println("=============================================================");
+	   resourceType request = resourceType.newBuilder().setMyResourceType("On Server: Water").build();
+
+	   registrationTypeResponse response = stubB.enterNaturalResourcetype(request);
+
+	   System.out.println(String.valueOf( response.getNaturalResourceRegistered ()));
+	   
+	   //newChannel.shutdownNow();
+
 	   //Server Streaming - method: returnAirQualitybyPeriod, request: identifyPeriod, response: reportAirWaterQuality
 	   
-	
-		identifyPeriod request = identifyPeriod.newBuilder().setPeriodMsg("The period of your consultation is from 2021-05-06 to 2021-08-06 ").build();	
+	    System.out.println("=============================================================");
+		identifyPeriod request1 = identifyPeriod.newBuilder().setPeriodMsg("Searching report on the Database...").build();	
 		
 		
-		Iterator<reportAirWaterQuality> responses = stubB.returnAirQualitybyPeriod(request);
+		Iterator<reportAirWaterQuality> responses = stubB.returnAirQualitybyPeriod(request1);
 		while (responses.hasNext()) {
 			reportAirWaterQuality rm = responses.next();
 			System.out.println(String.valueOf( rm.getPeriodMsg()));
+			System.out.println(String.valueOf( rm.getMyResourceType()));
+			System.out.println(String.valueOf( rm.getQualityReport()));
 	                
 		}
 		newChannel.shutdownNow();
