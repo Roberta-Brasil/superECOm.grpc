@@ -34,6 +34,7 @@ import simpleMDNS.SimpleServiceRegistration1;
 			System.out.println("Port: " + port);
 			
 	//The builder Pattern - this is an instance variable that containing the server	
+			
 			Server server = ServerBuilder.forPort(port)
 					.addService(serverService2)
 					.build()
@@ -43,6 +44,7 @@ import simpleMDNS.SimpleServiceRegistration1;
 			
 	//To guarantee that the server will keep running 
 			server.awaitTermination();
+			
 
 		}
 		
@@ -143,6 +145,8 @@ import simpleMDNS.SimpleServiceRegistration1;
 
 	//to the client knows I finished the messages
 	responseObserver.onCompleted();
+	
+	
 
 	}
 

@@ -54,7 +54,7 @@ import simpleMDNS.SimpleServiceRegistration1;
 		//Server Streaming - method: enterLocation, request: enterCity, response: displayLocationDetails.
 		  
 
-@Override
+  @Override
 
 public void enterLocation(enterCity request, StreamObserver<displayLocationDetails> responseObserver){
 
@@ -78,35 +78,36 @@ public void enterLocation(enterCity request, StreamObserver<displayLocationDetai
 
     //Later messages
 
-      responseBuilder.setLocationConfirmationt(true);
+      responseBuilder.setLocationConfirmation("Click on the Confirm Location Button");
       responseObserver.onNext(responseBuilder.build());
 
     //to the client knows I finished the messages
       responseObserver.onCompleted();
 
-}
+};
+	
 		  	  
 		//Bidirectional Streaming - method:addingDetails, request: stream addInfo, response: responseAddInfo.
 		  
-@Override
-
-public StreamObserver<addInfo> checkingMonitoringStations(StreamObserver<verifyStationRequested> responseObserver) {
-	return new StreamObserver<addInfo>() {
-        int count;
-        
         @Override
-        public void onNext(addInfo rq) {
-                count++;
+
+            public StreamObserver<addInfo> addingDetails(StreamObserver<responseAddInfo> responseObserver) {
+	          return new StreamObserver<addInfo>() {
+        
+        
+         @Override
+             public void onNext(addInfo rq) {
+                
                 System.out.println(rq.getNaturalResourceId());
                 System.out.println(rq.getWind());
                 System.out.println(rq.getTemperature());
                 System.out.println(rq.getTypeOfnaturalDisaster());
                 System.out.println(rq.getTypeOfPollutan());
             
-            for (int i = 0; i < 3; i++) {
-    	    	    responseAddInfo rm0 = responseAddInfo.newBuilder().setResourcesMessageConfirmation("Server message: The city added is: " + i).build();
-                    responseAddInfo rm1 = responseAddInfo.newBuilder().setLastAddedMsg("Server message: Checking station..." + i).build();
-                    responseAddInfo rm2 = responseAddInfo.newBuilder().setNaturalResourceLastAdded("Server message: Thanks for you contribution. the information was added sucssefully" + i).build();
+            
+    	    	    responseAddInfo response = responseAddInfo.newBuilder().setResourcesMessageConfirmation("Server message: The city added is: ").build();
+                    responseAddInfo response1 = responseAddInfo.newBuilder().setLastAddedMsg("Server message: Checking station...").build();
+                    responseAddInfo response2 = responseAddInfo.newBuilder().setNaturalResourceLastAdded("Server message: Thanks for you contribution. the information was added sucssefully").build();
 
     	    	try {
     				Thread.sleep(1500);
@@ -115,9 +116,9 @@ public StreamObserver<addInfo> checkingMonitoringStations(StreamObserver<verifyS
     				e.printStackTrace();
     			}
     	    	
-    	    	responseObserver.onNext(null);
+    	    	responseObserver.onNext(response);
     	    	//responseObserver.onNext(rm);
-    	    }
+    	    
             
         }
 

@@ -2,6 +2,8 @@ package ds.Client;
 
 import java.util.Iterator;
 
+import javax.jmdns.ServiceInfo;
+
 import ds.Service1.verifyStationRequested;
 import ds.Service1.waterAirQuality;
 import ds.Service1.displayCityInfo;
@@ -12,6 +14,7 @@ import ds.Service1.service1Grpc.service1BlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
+import simpleMDNS.SimpleServiceDiscovery;
 
 
 public class Client_Service1 {
@@ -20,14 +23,19 @@ public class Client_Service1 {
 		
 	//Build a channel - connects the client to the server
 		
-		//specify the server and the port
-		int port = 50051;
+
+		//ServiceInfo serviceInfo;
+		//String service_type = "_grpc._tcp.local.";
+		//Now retrieve the serviceInfo - all we are supplying is the service type
+		//serviceInfo  = SimpleServiceDiscovery.runjmDNS(service_type);
+		
+		//specify the server and the port and use the service info to get the port
+	    int port = 50051 ; //serviceInfo.getPort();
 		String host = "localhost";
 		
 		//Generic code is generic
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();
 		service1Grpc.service1Stub asyncStub = service1Grpc.newStub(channel);	
-		service1Grpc.service1Stub asyncStubB = service1Grpc.newStub(channel);
 		service1BlockingStub stubB = service1Grpc.newBlockingStub(channel);
 		
 		
@@ -99,11 +107,11 @@ public class Client_Service1 {
 		        
   /*Bidirectional Streaming - method: checkingMonitoringStations, request:scanCityEntered, response: verifyStationRequested){}	 
 
-StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifyStationRequested>() {
+      StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifyStationRequested>() {
 			
 	        @Override
 	        public void onNext(verifyStationRequested rm) {
-	            System.out.println(rm.getDataCityInfo());
+	                System.out.println(rm.getDataCityInfo());
                     System.out.println(rm.getCheckingStation());
                     System.out.println(rm.getStationFound());
 	        }
@@ -119,10 +127,11 @@ StreamObserver<verifyStationRequested> responseOb = new StreamObserver<verifySta
 			}
 	    };
 	    
-	    StreamObserver<scanCityEntered> requestOb = asyncStubB.checkingMonitoringStations(responseObserver);
+	    StreamObserver<scanCityEntered> requestOb = asyncStub.checkingMonitoringStations(responseObserver);
 	    
 	    
 	    	scanCityEntered rm = scanCityEntered.newBuilder().setDataCityInfo ("Roma").build();
+	    	
 	    	try {
 				Thread.sleep(1500);
 			} catch (InterruptedException e) {

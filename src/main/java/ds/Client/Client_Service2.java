@@ -1,6 +1,9 @@
 package ds.Client;
 
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+
+import javax.jmdns.ServiceInfo;
 
 import ds.Service2.identifyPeriod;
 import ds.Service2.periodRequested;
@@ -9,26 +12,36 @@ import ds.Service2.reportAirWaterQuality;
 import ds.Service2.resourceType;
 import ds.Service2.service2Grpc;
 import ds.Service2.service2Grpc.service2BlockingStub;
+import ds.Service2.service2Grpc.service2Stub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
+import simpleMDNS.SimpleServiceDiscovery;
 
 
 public class Client_Service2 {
 
 	public static void main(String[] args) throws InterruptedException {
 
+		
+		//ServiceInfo serviceInfo;
+		//String service_type = "_grpc._tcp.local.";
+		
+		//Now retrieve the serviceInfo - all we are supplying is the service type
+		//serviceInfo  = SimpleServiceDiscovery.runjmDNS(service_type);
+		
 		//Build a channel - connects the client to the server
 
-		//specify the server and the port
+		//specify the server and the port and use the service info to get the port
+	    //int port = serviceInfo.getPort();
 		int port = 50052;
 		String host = "localhost";
 
-		ManagedChannel newChannel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();	
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();	
 		
 		//Declaring Stub
-		service2Grpc.service2Stub asyncStub = service2Grpc.newStub(newChannel);
-		service2BlockingStub stubB = service2Grpc.newBlockingStub(newChannel);
+		service2Grpc.service2Stub asyncStub = service2Grpc.newStub(channel);
+		service2BlockingStub blockingStub = service2Grpc.newBlockingStub(channel);
 
 		//Client Streaming - Method:requestPeriod, request:periodRequested,response:identifyPeriod.
 
@@ -97,7 +110,7 @@ public class Client_Service2 {
 	   System.out.println("=============================================================");
 	   resourceType request = resourceType.newBuilder().setMyResourceType("On Server: Please enter the natural resource type to consult. It can be 'Water' 'Air' or'Both' ").build();
 
-	   registrationTypeResponse response = stubB.enterNaturalResourcetype(request);
+	   registrationTypeResponse response = blockingStub.enterNaturalResourcetype(request);
 
 	   System.out.println(String.valueOf( response.getNaturalResourceRegistered ()));
 	   
@@ -109,7 +122,7 @@ public class Client_Service2 {
 		identifyPeriod request1 = identifyPeriod.newBuilder().setPeriodMsg("Searching report on the Database...").build();	
 		
 		
-		Iterator<reportAirWaterQuality> responses = stubB.returnAirQualitybyPeriod(request1);
+		Iterator<reportAirWaterQuality> responses = blockingStub.returnAirQualitybyPeriod(request1);
 		while (responses.hasNext()) {
 			reportAirWaterQuality rm = responses.next();
 			System.out.println(String.valueOf( rm.getPeriodMsg()));
@@ -117,7 +130,8 @@ public class Client_Service2 {
 			System.out.println(String.valueOf( rm.getQualityReport()));
 	                
 		}
-		newChannel.shutdownNow();
+		Thread.sleep(5000);
+		channel.shutdown().awaitTermination(60, TimeUnit.SECONDS);
 
 		};
 	

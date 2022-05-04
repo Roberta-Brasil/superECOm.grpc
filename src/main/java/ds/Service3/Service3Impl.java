@@ -56,7 +56,7 @@ public final class Service3Impl {
       "\n\016service3.proto\"\036\n\tenterCity\022\021\n\tcityAdd" +
       "ed\030\001 \001(\t\"^\n\026displayLocationDetails\022\021\n\tci" +
       "tyAdded\030\001 \001(\t\022\023\n\013cityDetails\030\002 \001(\t\022\034\n\024lo" +
-      "cationConfirmation\030\003 \001(\010\"~\n\007addInfo\022\031\n\021n" +
+      "cationConfirmation\030\003 \001(\t\"~\n\007addInfo\022\031\n\021n" +
       "aturalResourceId\030\001 \001(\t\022\014\n\004wind\030\002 \001(\t\022\023\n\013" +
       "temperature\030\003 \001(\t\022\035\n\025typeOfnaturalDisast" +
       "er\030\004 \001(\t\022\026\n\016typeOfPollutan\030\005 \001(\t\"o\n\017resp" +

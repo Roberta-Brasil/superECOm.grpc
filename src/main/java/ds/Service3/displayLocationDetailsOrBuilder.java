@@ -28,7 +28,12 @@ public interface displayLocationDetailsOrBuilder extends
       getCityDetailsBytes();
 
   /**
-   * <code>bool locationConfirmation = 3;</code>
+   * <code>string locationConfirmation = 3;</code>
    */
-  boolean getLocationConfirmation();
+  java.lang.String getLocationConfirmation();
+  /**
+   * <code>string locationConfirmation = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationConfirmationBytes();
 }

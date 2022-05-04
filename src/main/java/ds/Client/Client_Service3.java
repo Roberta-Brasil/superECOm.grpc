@@ -3,6 +3,8 @@ package ds.Client;
 
 import java.util.Iterator;
 
+import javax.jmdns.ServiceInfo;
+
 import ds.Service3.addInfo;
 import ds.Service3.displayLocationDetails;
 import ds.Service3.enterCity;
@@ -14,16 +16,23 @@ import ds.Service3.service3Grpc.service3BlockingStub;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
+import simpleMDNS.SimpleServiceDiscovery;
 
 
 public class Client_Service3 {
 
 	public static void main(String[] args) throws InterruptedException {
-
+		
 		//Build a channel - connects the client to the server
+		
+		//ServiceInfo serviceInfo;
+		//String service_type = "_grpc._tcp.local.";
+		//Now retrieve the serviceInfo - all we are supplying is the service type
+		//serviceInfo  = SimpleServiceDiscovery.runjmDNS(service_type);
 
-		//specify the server and the port
-		int port = 50051;
+		
+		//specify the server and the port and use the service info to get the port
+	    int port = 50051;//serviceInfo.getPort();
 		String host = "localhost";
 
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", port).usePlaintext().build();	
@@ -79,12 +88,11 @@ public class Client_Service3 {
 	    StreamObserver<addInfo> requestObserver = asyncStub.addingDetails(responseObserver);
 	    
 	    
-	    for (int i = 0; i < 3; i++) {
-	    	    addInfo rm = addInfo.newBuilder().setNaturalResourceId("The Natural resource ID is 0089" + i).build();
-                addInfo rm0 = addInfo.newBuilder().setWind("The wind is 10 km" + i).build();
-                addInfo rm1 = addInfo.newBuilder().setTemperature("The Temperature is 40 Deggres Celsius" + i).build();
-                addInfo rm2 = addInfo.newBuilder().setTypeOfnaturalDisaster("The Type of Natural disaster is Fire" + i).build();
-                addInfo rm3 = addInfo.newBuilder().setTypeOfPollutan("The type of pollutant is Petrol" + i).build();
+	    	    addInfo rm = addInfo.newBuilder().setNaturalResourceId("The Natural resource ID is 0089").build();
+                addInfo rm1 = addInfo.newBuilder().setWind("The wind is 10 km").build();
+                addInfo rm2 = addInfo.newBuilder().setTemperature("The Temperature is 40 Deggres Celsius").build();
+                addInfo rm3 = addInfo.newBuilder().setTypeOfnaturalDisaster("The Type of Natural disaster is Fire").build();
+                addInfo rm4 = addInfo.newBuilder().setTypeOfPollutan("The type of pollutant is Petrol").build();
                 
 	    	try {
 				Thread.sleep(1500);
@@ -95,10 +103,7 @@ public class Client_Service3 {
 	    	requestObserver.onNext(rm);
 	    	//requestObserver.onCompleted();
 	    	
-	    }
-
-	    requestObserver.onCompleted();
-	    
+	    	    	    
 	    while (true) {
 	    	try {
 				Thread.sleep(2000);

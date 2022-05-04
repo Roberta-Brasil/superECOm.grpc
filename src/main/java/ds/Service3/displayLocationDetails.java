@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private displayLocationDetails() {
     cityAdded_ = "";
     cityDetails_ = "";
-    locationConfirmation_ = false;
+    locationConfirmation_ = "";
   }
 
   @java.lang.Override
@@ -57,9 +57,10 @@ private static final long serialVersionUID = 0L;
             cityDetails_ = s;
             break;
           }
-          case 24: {
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            locationConfirmation_ = input.readBool();
+            locationConfirmation_ = s;
             break;
           }
           default: {
@@ -163,12 +164,37 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOCATIONCONFIRMATION_FIELD_NUMBER = 3;
-  private boolean locationConfirmation_;
+  private volatile java.lang.Object locationConfirmation_;
   /**
-   * <code>bool locationConfirmation = 3;</code>
+   * <code>string locationConfirmation = 3;</code>
    */
-  public boolean getLocationConfirmation() {
-    return locationConfirmation_;
+  public java.lang.String getLocationConfirmation() {
+    java.lang.Object ref = locationConfirmation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationConfirmation_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string locationConfirmation = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLocationConfirmationBytes() {
+    java.lang.Object ref = locationConfirmation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      locationConfirmation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -191,8 +217,8 @@ private static final long serialVersionUID = 0L;
     if (!getCityDetailsBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, cityDetails_);
     }
-    if (locationConfirmation_ != false) {
-      output.writeBool(3, locationConfirmation_);
+    if (!getLocationConfirmationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, locationConfirmation_);
     }
     unknownFields.writeTo(output);
   }
@@ -209,9 +235,8 @@ private static final long serialVersionUID = 0L;
     if (!getCityDetailsBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, cityDetails_);
     }
-    if (locationConfirmation_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, locationConfirmation_);
+    if (!getLocationConfirmationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, locationConfirmation_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -233,8 +258,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getCityAdded());
     result = result && getCityDetails()
         .equals(other.getCityDetails());
-    result = result && (getLocationConfirmation()
-        == other.getLocationConfirmation());
+    result = result && getLocationConfirmation()
+        .equals(other.getLocationConfirmation());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -251,8 +276,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + CITYDETAILS_FIELD_NUMBER;
     hash = (53 * hash) + getCityDetails().hashCode();
     hash = (37 * hash) + LOCATIONCONFIRMATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getLocationConfirmation());
+    hash = (53 * hash) + getLocationConfirmation().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -390,7 +414,7 @@ private static final long serialVersionUID = 0L;
 
       cityDetails_ = "";
 
-      locationConfirmation_ = false;
+      locationConfirmation_ = "";
 
       return this;
     }
@@ -477,8 +501,9 @@ private static final long serialVersionUID = 0L;
         cityDetails_ = other.cityDetails_;
         onChanged();
       }
-      if (other.getLocationConfirmation() != false) {
-        setLocationConfirmation(other.getLocationConfirmation());
+      if (!other.getLocationConfirmation().isEmpty()) {
+        locationConfirmation_ = other.locationConfirmation_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -647,28 +672,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean locationConfirmation_ ;
+    private java.lang.Object locationConfirmation_ = "";
     /**
-     * <code>bool locationConfirmation = 3;</code>
+     * <code>string locationConfirmation = 3;</code>
      */
-    public boolean getLocationConfirmation() {
-      return locationConfirmation_;
+    public java.lang.String getLocationConfirmation() {
+      java.lang.Object ref = locationConfirmation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationConfirmation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>bool locationConfirmation = 3;</code>
+     * <code>string locationConfirmation = 3;</code>
      */
-    public Builder setLocationConfirmation(boolean value) {
-      
+    public com.google.protobuf.ByteString
+        getLocationConfirmationBytes() {
+      java.lang.Object ref = locationConfirmation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationConfirmation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string locationConfirmation = 3;</code>
+     */
+    public Builder setLocationConfirmation(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
       locationConfirmation_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool locationConfirmation = 3;</code>
+     * <code>string locationConfirmation = 3;</code>
      */
     public Builder clearLocationConfirmation() {
       
-      locationConfirmation_ = false;
+      locationConfirmation_ = getDefaultInstance().getLocationConfirmation();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string locationConfirmation = 3;</code>
+     */
+    public Builder setLocationConfirmationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      locationConfirmation_ = value;
       onChanged();
       return this;
     }

@@ -34,7 +34,7 @@ service service3{
 
     string cityAdded = 1;
  	string cityDetails = 2;
- 	bool locationConfirmation = 3;
+ 	string locationConfirmation = 3;
 
  }
 
